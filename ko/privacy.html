@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>개인정보 처리방침 · Slovo</title>
+<meta name="description" content="Slovo는 iPhone과 iPad에서 바로 음성을 텍스트로 바꿉니다. 녹음하거나 오디오를 가져오면 타임코드가 붙은 완성된 텍스트를 얻을 수 있고, 어떤 것도 기기 밖으로 나가지 않습니다.">
+<meta name="theme-color" content="#1E6F5C">
+<link rel="icon" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #F5F3EE; --surface: #FFFFFF; --ink: #17160F; --ink2: #6E6B62;
+    --line: rgba(23, 22, 15, 0.10); --accent: #1E6F5C; --accent-ink: #FFFFFF;
+    --accent-soft: rgba(30, 111, 92, 0.10); --accent-glow: rgba(30, 111, 92, 0.22);
+    --shadow: 0 10px 30px rgba(23, 22, 15, 0.07), 0 1px 1px rgba(0, 0, 0, 0.04);
+    --phone-frame: #1E1E1B;
+    --sans: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Hiragino Sans", "Noto Sans CJK SC", "Apple SD Gothic Neo", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141412; --surface: #1E1E1B; --ink: #F1EFE8; --ink2: #9C998F;
+      --line: rgba(241, 239, 232, 0.10); --accent: #5FB89C; --accent-ink: #0F1A16;
+      --accent-soft: rgba(95, 184, 156, 0.14); --accent-glow: rgba(95, 184, 156, 0.18);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3);
+      --phone-frame: #2A2A27;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141412; --surface: #1E1E1B; --ink: #F1EFE8; --ink2: #9C998F;
+    --line: rgba(241, 239, 232, 0.10); --accent: #5FB89C; --accent-ink: #0F1A16;
+    --accent-soft: rgba(95, 184, 156, 0.14); --accent-glow: rgba(95, 184, 156, 0.18);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3);
+    --phone-frame: #2A2A27;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; line-height: 1.12; letter-spacing: -0.015em; }
+  p { margin: 0; }
+  .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 32px); }
+
+  .top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
+  .brand:hover { text-decoration: none; }
+  .mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; flex: none; }
+  .mark i { display: inline-block; width: 2px; background: var(--accent-ink); border-radius: 2px; margin: 0 1.1px; vertical-align: middle; }
+  nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; font-weight: 500; }
+  nav a { color: var(--ink2); }
+  nav a:hover { color: var(--ink); text-decoration: none; }
+  nav .cta { color: var(--accent-ink); background: var(--accent); padding: 8px 14px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+  nav .cta:hover { color: var(--accent-ink); filter: brightness(1.08); }
+  @media (max-width: 640px) { nav .hide-sm { display: none; } }
+
+  .langbox { position: relative; display: inline-flex; align-items: center; }
+  .langbox select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 500; color: var(--ink2); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 26px 6px 12px; cursor: pointer; max-width: 160px; }
+  .langbox select:hover { color: var(--ink); border-color: var(--ink2); }
+  .langbox::after { content: ""; position: absolute; right: 12px; top: 50%; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-70%) rotate(45deg); color: var(--ink2); pointer-events: none; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 52px; padding: 0 22px; border-radius: 16px; font-weight: 600; font-size: 16px; white-space: nowrap; transition: transform 0.15s ease, filter 0.15s ease; border: 1px solid transparent; }
+  .btn:hover { text-decoration: none; filter: brightness(1.06); }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-secondary { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+  .btn-secondary:hover { filter: none; }
+  @media (max-width: 420px) { .btn { white-space: normal; height: auto; min-height: 52px; padding-block: 12px; text-align: center; } }
+
+  section.block { padding-block: clamp(56px, 8vw, 96px); }
+  .block + .block { border-top: 1px solid var(--line); }
+  .block h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 600; max-width: 22ch; }
+  .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
+
+  .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
+  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
+  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
+  .phone-wrap { position: relative; display: grid; place-items: center; }
+  .phone-wrap::before { content: ""; position: absolute; inset: 10% 0; border-radius: 50%; background: radial-gradient(closest-side, var(--accent-glow), transparent 75%); filter: blur(20px); }
+  .phone { position: relative; width: min(300px, 82vw); aspect-ratio: 644 / 1302; max-width: 100%; border-radius: 40px; border: 9px solid var(--phone-frame); background: var(--phone-frame); box-shadow: var(--shadow), 0 30px 60px rgba(23, 22, 15, 0.16); overflow: hidden; }
+  .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 31px; }
+
+  .bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(200px, auto); gap: 14px; margin-top: 40px; }
+  .cell { background: var(--surface); border-radius: 22px; padding: 26px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .cell h3 { font-size: 20px; font-weight: 600; }
+  .cell p { color: var(--ink2); font-size: 15.5px; }
+  .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
+  .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
+  .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
+  .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
+  .cell.shot .pic { margin: 12px -6px 0; max-height: 400px; border-radius: 26px 26px 0 0; border: 6px solid var(--phone-frame); border-bottom: 0; background: var(--phone-frame); overflow: hidden; flex: 1; min-height: 0; }
+  .cell.shot .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 20px 20px 0 0; }
+  @media (max-width: 860px) {
+    .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+    .cell.privacy { grid-column: span 2; }
+    .cell.shot { grid-row: auto; grid-column: span 2; }
+    .cell.shot .pic { max-height: 360px; }
+  }
+  @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
+  .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
+  .steps li::before { content: counter(step); font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; display: block; margin-bottom: 14px; }
+  .steps h3 { font-size: 21px; font-weight: 600; }
+  .steps p { color: var(--ink2); margin-top: 8px; font-size: 15.5px; }
+  .sample { margin-top: 40px; background: var(--surface); border-radius: 22px; padding: 26px 28px; box-shadow: var(--shadow); max-width: 60ch; font-size: 15.5px; }
+  .sample .tc { display: block; margin-top: 12px; font-size: 13px; }
+  .sample .tc:first-child { margin-top: 0; }
+  .sample p { margin-top: 4px; }
+  @media (max-width: 720px) { .steps { grid-template-columns: 1fr; gap: 24px; } }
+
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 40px; }
+  .plan { border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line); }
+  .plan.pro { background: var(--surface); box-shadow: var(--shadow); border-color: transparent; }
+  .plan h3 { font-size: 22px; font-weight: 600; }
+  .plan .price { font-family: var(--mono); font-size: 15px; color: var(--ink2); }
+  .plan ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .plan li { padding-left: 20px; position: relative; font-size: 15.5px; }
+  .plan li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .plan .note { color: var(--ink2); font-size: 14px; margin-top: auto; padding-top: 10px; }
+  @media (max-width: 680px) { .plans { grid-template-columns: 1fr; } }
+
+  .closing .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+  .closing h2 { max-width: 18ch; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 36px; font-size: 14px; color: var(--ink2); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px; }
+  footer nav { flex-wrap: wrap; gap: 8px 22px; font-size: 14px; }
+  footer a { color: var(--ink2); }
+  footer a:hover { color: var(--ink); }
+
+  .doc { padding-block: clamp(40px, 6vw, 72px) clamp(56px, 8vw, 96px); }
+  .doc .wrap { max-width: 760px; }
+  .doc .back { font-size: 14px; font-weight: 500; }
+  .doc h1 { font-size: clamp(32px, 4.5vw, 44px); font-weight: 600; margin-top: 18px; }
+  .doc .updated { font-family: var(--mono); font-size: 13px; color: var(--ink2); margin-top: 14px; }
+  .doc .intro { font-size: 18px; color: var(--ink2); margin-top: 24px; max-width: 62ch; }
+  .doc h2 { font-size: 22px; font-weight: 600; margin-top: 44px; max-width: none; }
+  .doc p { margin-top: 12px; max-width: 68ch; }
+  .doc ul, .doc ol { margin: 12px 0 0; padding-left: 22px; max-width: 68ch; }
+  .doc li { margin-top: 6px; }
+  .doc .card { background: var(--surface); border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow); margin-top: 24px; }
+  .doc .card p { margin-top: 6px; }
+  .doc .card .hint { color: var(--ink2); font-size: 14px; margin-top: 12px; }
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 14px 0; font-weight: 600; font-size: 17px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-family: var(--mono); color: var(--accent); font-size: 20px; line-height: 1; flex: none; transition: transform 0.2s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
+  details ol { padding-left: 22px; }
+  details li { margin-top: 6px; }
+  .faq { margin-top: 28px; }
+  [hidden] { display: none !important; }
+  :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
+
+  @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } .hero .phone-wrap { order: 2; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, summary::after { transition: none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="mark" aria-hidden="true"><i style="height:4px"></i><i style="height:9px"></i><i style="height:16px"></i><i style="height:8px"></i><i style="height:4px"></i></span> Slovo</a>
+    <nav aria-label="Site">
+      <a class="hide-sm" href="./#features">기능</a>
+      <a class="hide-sm" href="./#pricing">요금</a>
+      <a class="hide-sm" href="support.html">지원</a>
+      <span class="langbox "><select aria-label="언어" data-lang-select><option value="../privacy.html">English</option><option value="../ru/privacy.html">Русский</option><option value="../uk/privacy.html">Українська</option><option value="../de/privacy.html">Deutsch</option><option value="../fr/privacy.html">Français</option><option value="../es/privacy.html">Español</option><option value="../it/privacy.html">Italiano</option><option value="../pt-BR/privacy.html">Português (Brasil)</option><option value="../pl/privacy.html">Polski</option><option value="../tr/privacy.html">Türkçe</option><option value="../nl/privacy.html">Nederlands</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../ja/privacy.html">日本語</option><option value="../ko/privacy.html" selected>한국어</option></select></span>
+      <a class="cta" href="https://apps.apple.com/app/id6812518848">App Store</a>
+    </nav>
+  </div>
+</header><main class="doc"><div class="wrap">
+<a class="back" href="./">Slovo로 돌아가기</a>
+<h1>개인정보 처리방침</h1>
+<div class="updated">최종 업데이트: 2026년 9월 16일</div>
+<p class="intro">Slovo는 기기에서 음성을 텍스트로 바꿉니다. 계정도, 분석 도구도, 자체 서버도 없기 때문에 알려 드릴 내용이 아주 적습니다. 그 전부를 여기에 적었습니다.</p>
+<h2>요약</h2><ul><li>녹음, 가져온 파일, 받아쓰기는 사용자의 기기에서 처리되고 저장됩니다.</li><li>저희는 개인정보를 수집하지 않으며, 앱에는 분석, 광고, 추적 코드가 없습니다.</li><li>iCloud 동기화는 선택 사항이며 사용자 본인의 Apple 계정을 통해 이루어집니다. 저희는 그 데이터를 볼 수 없습니다.</li><li>앱이 보내는 네트워크 요청은 한 번뿐인 모델 다운로드, 선택 사항인 iCloud 동기화, App Store 구입, 무료 플랜을 위한 날짜 확인이 전부입니다.</li></ul>
+<h2>기기에 남는 것</h2><p>Slovo는 사용자가 마이크 접근을 허용한 뒤, 녹음하는 동안에만 마이크로 오디오를 녹음합니다. 녹음, 가져온 파일, 인식된 텍스트, 사용자가 입력한 화자 이름, 설정은 기기 안 앱의 비공개 저장 공간에 보관됩니다. 음성 인식과 텍스트 다듬기는 한 번 다운로드해 기기에 저장된 모델로 기기에서 실행됩니다.</p>
+<p>공유 시트를 통해 Slovo로 보낸 파일은 앱이 열 수 있도록 같은 기기 안 앱의 저장 공간으로 복사됩니다.</p>
+<h2>iCloud 동기화</h2><p>"iCloud로 동기화"를 켜 두면 받아쓰기는 사용자의 비공개 iCloud 데이터베이스에, 오디오 파일은 iCloud Drive 안 앱 폴더에 저장됩니다. 이 데이터는 사용자의 Apple 계정에 연결되어 있고 Apple이 암호화하며, 사용자 본인과 해당 계정으로 로그인한 기기에서만 접근할 수 있습니다. 저희는 접근할 수 없습니다. 모든 것을 한 기기에만 두려면 설정을 끄세요. iCloud 쪽에는 Apple의 iCloud 약관과 개인정보 처리방침이 적용됩니다.</p>
+<h2>모델 다운로드</h2><p>Slovo를 처음 설정할 때, 그리고 다른 모델을 선택할 때마다 앱은 Hugging Face(huggingface.co)에서 모델 파일을 다운로드합니다. 여느 다운로드와 마찬가지로 이 요청은 파일을 제공하는 서버에 사용자의 IP 주소를 드러냅니다. 사용자나 녹음, 텍스트에 관한 어떤 정보도 함께 전송되지 않으며, 저희가 그로부터 받는 것도 없습니다.</p>
+<h2>무료 플랜과 구입</h2><p>무료 플랜은 인식한 분량을 기기에서 셉니다. 기기 시계를 바꾸더라도 월별 집계가 정확하도록 앱이 Apple 서버에 현재 날짜를 물어볼 수 있습니다. 이 요청에는 사용자에 관한 정보가 전혀 담기지 않습니다.</p>
+<p>Slovo Pro는 App Store를 통해 판매됩니다. 결제와 구독은 Apple이 처리하며, 저희는 사용자의 결제 정보, 이름, 주소를 볼 수 없습니다. 구입에는 Apple의 개인정보 처리방침이 적용됩니다.</p>
+<h2>충돌 보고서</h2><p>앱에는 충돌 보고나 분석 라이브러리가 없습니다. iOS에서 앱 개발자와 분석 데이터를 공유하도록 허용한 경우, Apple이 자체 시스템을 통해 익명화된 충돌 보고서를 저희에게 제공할 수 있습니다. 이 설정은 iOS 설정의 개인정보 보호 및 보안, 분석 및 향상에서 직접 변경할 수 있습니다.</p>
+<h2>저희에게 메일을 보낼 때</h2><p>앱에서 문제 신고나 개선 제안을 보내면 미리 작성된 메일과 함께 메일 앱이 열립니다. 메일 끝에는 앱 버전, 기기 모델, iOS 버전, 언어 설정, 선택한 음성 인식 모델이 붙습니다. 문제를 재현하는 데 도움이 되기 때문입니다. 보내기 전에 이 줄들 중 어느 것이든 지워도 됩니다. 저희는 사용자의 주소와 메시지를 답장하는 데만 사용하며, 다른 곳에 공유하지 않습니다.</p>
+<h2>데이터 삭제</h2><p>받아쓰기나 오디오는 언제든 앱에서 삭제할 수 있습니다. 설정의 저장 공간 화면에서 앱이 보관하는 내용을 확인하고 비울 수 있습니다. 앱을 삭제하면 기기에 저장된 모든 것이 지워집니다. iCloud에 동기화된 데이터는 동기화가 켜진 상태에서 앱에서 지우거나, iOS 설정의 Apple 계정, iCloud, 저장 공간 관리에서 지울 수 있습니다.</p>
+<h2>아동</h2><p>Slovo는 13세 미만 아동을 대상으로 하지 않으며, 누구에게서도 개인정보를 수집하지 않습니다.</p>
+<h2>방침 변경</h2><p>앱이 데이터를 새로운 방식으로 다루게 되면 이 페이지에 그 내용을 적고 상단의 날짜를 바꿉니다. 변경 후에도 앱을 계속 사용하면 갱신된 방침에 동의하는 것으로 봅니다.</p>
+<h2>문의</h2><p>개인정보 관련 문의: <a href="mailto:levgenys11@gmail.com?subject=Slovo%3A%20privacy">levgenys11@gmail.com</a></p>
+</div></main><footer>
+  <div class="wrap">
+    <div>Slovo: 음성을 텍스트로. Evgeny Lebedev 제작. <span class="mono">2026</span></div>
+    <nav aria-label="Legal">
+      <a href="privacy.html">개인정보 처리방침</a>
+      <a href="terms.html">이용 약관</a>
+      <a href="support.html">지원</a>
+      <a href="https://apps.apple.com/app/id6812518848">App Store</a>
+      <a href="mailto:levgenys11@gmail.com">levgenys11@gmail.com</a>
+    </nav>
+    <span class="langbox "><select aria-label="언어" data-lang-select><option value="../privacy.html">English</option><option value="../ru/privacy.html">Русский</option><option value="../uk/privacy.html">Українська</option><option value="../de/privacy.html">Deutsch</option><option value="../fr/privacy.html">Français</option><option value="../es/privacy.html">Español</option><option value="../it/privacy.html">Italiano</option><option value="../pt-BR/privacy.html">Português (Brasil)</option><option value="../pl/privacy.html">Polski</option><option value="../tr/privacy.html">Türkçe</option><option value="../nl/privacy.html">Nederlands</option><option value="../zh-Hans/privacy.html">简体中文</option><option value="../ja/privacy.html">日本語</option><option value="../ko/privacy.html" selected>한국어</option></select></span>
+  </div>
+</footer><script>
+  (function () {
+    var selects = document.querySelectorAll("[data-lang-select]");
+    for (var i = 0; i < selects.length; i++) {
+      selects[i].addEventListener("change", function (e) {
+        try { localStorage.setItem("slovoLang", e.target.selectedOptions[0].textContent); } catch (err) {}
+        location.href = e.target.value;
+      });
+    }
+  })();
+</script>
+</body>
+</html>

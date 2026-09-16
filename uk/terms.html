@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Умови використання · Slovo</title>
+<meta name="description" content="Slovo перетворює мовлення на текст просто на вашому iPhone та iPad. Записуйте або імпортуйте аудіо, отримуйте готовий текст із таймкодами — і нічого не залишає ваш пристрій.">
+<meta name="theme-color" content="#1E6F5C">
+<link rel="icon" href="../img/icon.png">
+<link rel="apple-touch-icon" href="../img/icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --bg: #F5F3EE; --surface: #FFFFFF; --ink: #17160F; --ink2: #6E6B62;
+    --line: rgba(23, 22, 15, 0.10); --accent: #1E6F5C; --accent-ink: #FFFFFF;
+    --accent-soft: rgba(30, 111, 92, 0.10); --accent-glow: rgba(30, 111, 92, 0.22);
+    --shadow: 0 10px 30px rgba(23, 22, 15, 0.07), 0 1px 1px rgba(0, 0, 0, 0.04);
+    --phone-frame: #1E1E1B;
+    --sans: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Hiragino Sans", "Noto Sans CJK SC", "Apple SD Gothic Neo", sans-serif;
+    --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #141412; --surface: #1E1E1B; --ink: #F1EFE8; --ink2: #9C998F;
+      --line: rgba(241, 239, 232, 0.10); --accent: #5FB89C; --accent-ink: #0F1A16;
+      --accent-soft: rgba(95, 184, 156, 0.14); --accent-glow: rgba(95, 184, 156, 0.18);
+      --shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3);
+      --phone-frame: #2A2A27;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #141412; --surface: #1E1E1B; --ink: #F1EFE8; --ink2: #9C998F;
+    --line: rgba(241, 239, 232, 0.10); --accent: #5FB89C; --accent-ink: #0F1A16;
+    --accent-soft: rgba(95, 184, 156, 0.14); --accent-glow: rgba(95, 184, 156, 0.18);
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3);
+    --phone-frame: #2A2A27;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--sans); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+  a { color: var(--accent); text-decoration: none; }
+  a:hover { text-decoration: underline; }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 6px; }
+  img { max-width: 100%; display: block; }
+  h1, h2, h3 { margin: 0; text-wrap: balance; line-height: 1.12; letter-spacing: -0.015em; }
+  p { margin: 0; }
+  .mono { font-family: var(--mono); font-variant-numeric: tabular-nums; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 32px); }
+
+  .top { position: sticky; top: 0; z-index: 10; background: color-mix(in srgb, var(--bg) 86%, transparent); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--line); }
+  .top .wrap { display: flex; align-items: center; justify-content: space-between; height: 64px; gap: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
+  .brand:hover { text-decoration: none; }
+  .mark { width: 30px; height: 30px; border-radius: 9px; background: var(--accent); display: grid; place-items: center; flex: none; }
+  .mark i { display: inline-block; width: 2px; background: var(--accent-ink); border-radius: 2px; margin: 0 1.1px; vertical-align: middle; }
+  nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; font-weight: 500; }
+  nav a { color: var(--ink2); }
+  nav a:hover { color: var(--ink); text-decoration: none; }
+  nav .cta { color: var(--accent-ink); background: var(--accent); padding: 8px 14px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
+  nav .cta:hover { color: var(--accent-ink); filter: brightness(1.08); }
+  @media (max-width: 640px) { nav .hide-sm { display: none; } }
+
+  .langbox { position: relative; display: inline-flex; align-items: center; }
+  .langbox select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 500; color: var(--ink2); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 26px 6px 12px; cursor: pointer; max-width: 160px; }
+  .langbox select:hover { color: var(--ink); border-color: var(--ink2); }
+  .langbox::after { content: ""; position: absolute; right: 12px; top: 50%; width: 6px; height: 6px; border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor; transform: translateY(-70%) rotate(45deg); color: var(--ink2); pointer-events: none; }
+
+  .btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 52px; padding: 0 22px; border-radius: 16px; font-weight: 600; font-size: 16px; white-space: nowrap; transition: transform 0.15s ease, filter 0.15s ease; border: 1px solid transparent; }
+  .btn:hover { text-decoration: none; filter: brightness(1.06); }
+  .btn:active { transform: scale(0.98); }
+  .btn-primary { background: var(--accent); color: var(--accent-ink); }
+  .btn-secondary { background: var(--surface); color: var(--ink); box-shadow: var(--shadow); }
+  .btn-secondary:hover { filter: none; }
+  @media (max-width: 420px) { .btn { white-space: normal; height: auto; min-height: 52px; padding-block: 12px; text-align: center; } }
+
+  section.block { padding-block: clamp(56px, 8vw, 96px); }
+  .block + .block { border-top: 1px solid var(--line); }
+  .block h2 { font-size: clamp(28px, 4vw, 38px); font-weight: 600; max-width: 22ch; }
+  .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
+
+  .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
+  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
+  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
+  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
+  .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
+  .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
+  .phone-wrap { position: relative; display: grid; place-items: center; }
+  .phone-wrap::before { content: ""; position: absolute; inset: 10% 0; border-radius: 50%; background: radial-gradient(closest-side, var(--accent-glow), transparent 75%); filter: blur(20px); }
+  .phone { position: relative; width: min(300px, 82vw); aspect-ratio: 644 / 1302; max-width: 100%; border-radius: 40px; border: 9px solid var(--phone-frame); background: var(--phone-frame); box-shadow: var(--shadow), 0 30px 60px rgba(23, 22, 15, 0.16); overflow: hidden; }
+  .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 31px; }
+
+  .bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(200px, auto); gap: 14px; margin-top: 40px; }
+  .cell { background: var(--surface); border-radius: 22px; padding: 26px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+  .cell h3 { font-size: 20px; font-weight: 600; }
+  .cell p { color: var(--ink2); font-size: 15.5px; }
+  .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
+  .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
+  .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
+  .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
+  .cell.shot .pic { margin: 12px -6px 0; max-height: 400px; border-radius: 26px 26px 0 0; border: 6px solid var(--phone-frame); border-bottom: 0; background: var(--phone-frame); overflow: hidden; flex: 1; min-height: 0; }
+  .cell.shot .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 20px 20px 0 0; }
+  @media (max-width: 860px) {
+    .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
+    .cell.privacy { grid-column: span 2; }
+    .cell.shot { grid-row: auto; grid-column: span 2; }
+    .cell.shot .pic { max-height: 360px; }
+  }
+  @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
+  .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
+  .steps li::before { content: counter(step); font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; display: block; margin-bottom: 14px; }
+  .steps h3 { font-size: 21px; font-weight: 600; }
+  .steps p { color: var(--ink2); margin-top: 8px; font-size: 15.5px; }
+  .sample { margin-top: 40px; background: var(--surface); border-radius: 22px; padding: 26px 28px; box-shadow: var(--shadow); max-width: 60ch; font-size: 15.5px; }
+  .sample .tc { display: block; margin-top: 12px; font-size: 13px; }
+  .sample .tc:first-child { margin-top: 0; }
+  .sample p { margin-top: 4px; }
+  @media (max-width: 720px) { .steps { grid-template-columns: 1fr; gap: 24px; } }
+
+  .plans { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-top: 40px; }
+  .plan { border-radius: 22px; padding: 28px; display: flex; flex-direction: column; gap: 14px; border: 1px solid var(--line); }
+  .plan.pro { background: var(--surface); box-shadow: var(--shadow); border-color: transparent; }
+  .plan h3 { font-size: 22px; font-weight: 600; }
+  .plan .price { font-family: var(--mono); font-size: 15px; color: var(--ink2); }
+  .plan ul { margin: 6px 0 0; padding: 0; list-style: none; display: grid; gap: 10px; }
+  .plan li { padding-left: 20px; position: relative; font-size: 15.5px; }
+  .plan li::before { content: ""; position: absolute; left: 0; top: 0.62em; width: 9px; height: 9px; border-radius: 50%; background: var(--accent); }
+  .plan .note { color: var(--ink2); font-size: 14px; margin-top: auto; padding-top: 10px; }
+  @media (max-width: 680px) { .plans { grid-template-columns: 1fr; } }
+
+  .closing .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 24px; }
+  .closing h2 { max-width: 18ch; }
+
+  footer { border-top: 1px solid var(--line); padding-block: 36px; font-size: 14px; color: var(--ink2); }
+  footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 16px 32px; }
+  footer nav { flex-wrap: wrap; gap: 8px 22px; font-size: 14px; }
+  footer a { color: var(--ink2); }
+  footer a:hover { color: var(--ink); }
+
+  .doc { padding-block: clamp(40px, 6vw, 72px) clamp(56px, 8vw, 96px); }
+  .doc .wrap { max-width: 760px; }
+  .doc .back { font-size: 14px; font-weight: 500; }
+  .doc h1 { font-size: clamp(32px, 4.5vw, 44px); font-weight: 600; margin-top: 18px; }
+  .doc .updated { font-family: var(--mono); font-size: 13px; color: var(--ink2); margin-top: 14px; }
+  .doc .intro { font-size: 18px; color: var(--ink2); margin-top: 24px; max-width: 62ch; }
+  .doc h2 { font-size: 22px; font-weight: 600; margin-top: 44px; max-width: none; }
+  .doc p { margin-top: 12px; max-width: 68ch; }
+  .doc ul, .doc ol { margin: 12px 0 0; padding-left: 22px; max-width: 68ch; }
+  .doc li { margin-top: 6px; }
+  .doc .card { background: var(--surface); border-radius: 18px; padding: 20px 22px; box-shadow: var(--shadow); margin-top: 24px; }
+  .doc .card p { margin-top: 6px; }
+  .doc .card .hint { color: var(--ink2); font-size: 14px; margin-top: 12px; }
+  details { border-top: 1px solid var(--line); padding: 4px 0; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; list-style: none; padding: 14px 0; font-weight: 600; font-size: 17px; display: flex; justify-content: space-between; gap: 16px; align-items: center; }
+  summary::-webkit-details-marker { display: none; }
+  summary::after { content: "+"; font-family: var(--mono); color: var(--accent); font-size: 20px; line-height: 1; flex: none; transition: transform 0.2s ease; }
+  details[open] summary::after { transform: rotate(45deg); }
+  details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
+  details ol { padding-left: 22px; }
+  details li { margin-top: 6px; }
+  .faq { margin-top: 28px; }
+  [hidden] { display: none !important; }
+  :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
+
+  @media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; } .hero .phone-wrap { order: 2; } }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn, summary::after { transition: none; } }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="./"><span class="mark" aria-hidden="true"><i style="height:4px"></i><i style="height:9px"></i><i style="height:16px"></i><i style="height:8px"></i><i style="height:4px"></i></span> Slovo</a>
+    <nav aria-label="Site">
+      <a class="hide-sm" href="./#features">Можливості</a>
+      <a class="hide-sm" href="./#pricing">Ціни</a>
+      <a class="hide-sm" href="support.html">Підтримка</a>
+      <span class="langbox "><select aria-label="Мова" data-lang-select><option value="../terms.html">English</option><option value="../ru/terms.html">Русский</option><option value="../uk/terms.html" selected>Українська</option><option value="../de/terms.html">Deutsch</option><option value="../fr/terms.html">Français</option><option value="../es/terms.html">Español</option><option value="../it/terms.html">Italiano</option><option value="../pt-BR/terms.html">Português (Brasil)</option><option value="../pl/terms.html">Polski</option><option value="../tr/terms.html">Türkçe</option><option value="../nl/terms.html">Nederlands</option><option value="../zh-Hans/terms.html">简体中文</option><option value="../ja/terms.html">日本語</option><option value="../ko/terms.html">한국어</option></select></span>
+      <a class="cta" href="https://apps.apple.com/app/id6812518848">App Store</a>
+    </nav>
+  </div>
+</header><main class="doc"><div class="wrap">
+<a class="back" href="./">Назад до Slovo</a>
+<h1>Умови використання</h1>
+<div class="updated">Останнє оновлення: 16 вересня 2026 р.</div>
+<p class="intro">Slovo надається вам за стандартною ліцензійною угодою з кінцевим користувачем Apple для застосунків, що поширюються через App Store. Умови нижче доповнюють її пунктами, які стосуються саме Slovo.</p>
+<h2>Ліцензія</h2><p>Використання застосунку регулюється <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/">ліцензійною угодою Apple з кінцевим користувачем ліцензованого застосунку</a>. Якщо ці умови та угода Apple розходяться, перевагу має угода Apple.</p>
+<h2>Що робить Slovo</h2><p>Slovo записує або імпортує аудіо й перетворює мовлення на текст на вашому пристрої за допомогою моделей розпізнавання мовлення. Автоматичне розпізнавання не ідеальне: імена, терміни, акценти та записи із шумом можуть давати помилки. Перевіряйте текст, перш ніж покладатися на нього в чомусь важливому.</p>
+<h2>Ваші записи та ваша відповідальність</h2><p>Ви відповідаєте за аудіо, яке записуєте або імпортуєте, і за текст, який із нього створюєте. Переконайтеся, що маєте право записувати й розшифровувати розмову: у багатьох країнах запис інших людей потребує їхньої згоди. Не використовуйте застосунок у спосіб, що порушує закон або чиїсь права.</p>
+<h2>Безкоштовний тариф і Slovo Pro</h2><p>Безкоштовний тариф розпізнає до 60 хвилин аудіо на календарний місяць і до 30 хвилин одного файлу; хвилини скидаються першого числа кожного місяця. Slovo Pro — це підписка з автоматичним поновленням, місячна або річна, яка знімає ці обмеження й дозволяє записи та файли тривалістю до 4 годин.</p>
+<ul><li>Оплата списується з вашого Apple Account, коли ви підтверджуєте покупку.</li><li>Підписка поновлюється автоматично, якщо ви не скасуєте її щонайменше за 24 години до кінця поточного періоду. Плата за поновлення списується з вашого облікового запису протягом 24 годин перед закінченням періоду.</li><li>Керувати підпискою або скасувати її можна в параметрах вашого облікового запису App Store. Після скасування Pro залишається активним до кінця оплаченого періоду.</li><li>Якщо пропонується безкоштовний пробний період, його невикористана частина втрачається, коли ви купуєте підписку.</li><li>Ціни залежать від країни й показуються в застосунку перед покупкою. Повернення коштів здійснює Apple за правилами App Store.</li><li>Щоб перенести наявну підписку на новий пристрій, скористайтеся кнопкою «Відновити покупки» в застосунку.</li></ul>
+<p>У майбутніх версіях застосунку ми можемо змінити склад безкоштовного тарифу та Slovo Pro. Зміни не скоротять період, який ви вже оплатили.</p>
+<h2>Моделі та стороннє програмне забезпечення</h2><p>Для розпізнавання та покращення тексту використовуються відкриті моделі, що працюють локально на вашому пристрої: Whisper від OpenAI, Parakeet від NVIDIA та Qwen від Alibaba Cloud, кожна за власною ліцензією. Файли моделей завантажуються з Hugging Face. У майбутніх версіях ми можемо додавати, замінювати або вилучати моделі; модель, яка вже є на вашому пристрої, працюватиме, доки ви її не видалите.</p>
+<h2>Ваші дані</h2><p>Усе, що ви створюєте в Slovo, зберігається на вашому пристрої та, якщо ввімкнути синхронізацію, у вашому власному iCloud. Ми не зберігаємо копій і не можемо їх відновити. Робіть резервну копію пристрою, якщо розшифровки для вас важливі. Що застосунок робить із даними, описано в нашій <a href="privacy.html">Політиці конфіденційності</a>.</p>
+<h2>Без гарантій</h2><p>Застосунок надається «як є». У межах, дозволених законом, ми не даємо гарантій щодо його точності, доступності чи придатності для певної мети й не несемо відповідальності за збитки, спричинені використанням застосунку або помилками в розпізнаному тексті.</p>
+<h2>Зміни в цих умовах</h2><p>Ми можемо оновлювати ці умови разом зі змінами в застосунку. Дата вгорі показує актуальну версію. Продовжуючи користуватися застосунком після оновлення, ви приймаєте нові умови.</p>
+<h2>Контакти</h2><p>Запитання щодо цих умов: <a href="mailto:levgenys11@gmail.com?subject=Slovo%3A%20terms">levgenys11@gmail.com</a>.</p>
+</div></main><footer>
+  <div class="wrap">
+    <div>Slovo: мовлення в текст. Створив Євген Лебедєв. <span class="mono">2026</span></div>
+    <nav aria-label="Legal">
+      <a href="privacy.html">Політика конфіденційності</a>
+      <a href="terms.html">Умови використання</a>
+      <a href="support.html">Підтримка</a>
+      <a href="https://apps.apple.com/app/id6812518848">App Store</a>
+      <a href="mailto:levgenys11@gmail.com">levgenys11@gmail.com</a>
+    </nav>
+    <span class="langbox "><select aria-label="Мова" data-lang-select><option value="../terms.html">English</option><option value="../ru/terms.html">Русский</option><option value="../uk/terms.html" selected>Українська</option><option value="../de/terms.html">Deutsch</option><option value="../fr/terms.html">Français</option><option value="../es/terms.html">Español</option><option value="../it/terms.html">Italiano</option><option value="../pt-BR/terms.html">Português (Brasil)</option><option value="../pl/terms.html">Polski</option><option value="../tr/terms.html">Türkçe</option><option value="../nl/terms.html">Nederlands</option><option value="../zh-Hans/terms.html">简体中文</option><option value="../ja/terms.html">日本語</option><option value="../ko/terms.html">한국어</option></select></span>
+  </div>
+</footer><script>
+  (function () {
+    var selects = document.querySelectorAll("[data-lang-select]");
+    for (var i = 0; i < selects.length; i++) {
+      selects[i].addEventListener("change", function (e) {
+        try { localStorage.setItem("slovoLang", e.target.selectedOptions[0].textContent); } catch (err) {}
+        location.href = e.target.value;
+      });
+    }
+  })();
+</script>
+</body>
+</html>
