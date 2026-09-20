@@ -31,7 +31,6 @@
     --line: rgba(23, 22, 15, 0.10); --accent: #1E6F5C; --accent-ink: #FFFFFF;
     --accent-soft: rgba(30, 111, 92, 0.10); --accent-glow: rgba(30, 111, 92, 0.22);
     --shadow: 0 10px 30px rgba(23, 22, 15, 0.07), 0 1px 1px rgba(0, 0, 0, 0.04);
-    --phone-frame: #1E1E1B;
     --sans: "Onest", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, "Hiragino Sans", "Noto Sans CJK SC", "Apple SD Gothic Neo", sans-serif;
     --mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
   }
@@ -41,7 +40,6 @@
       --line: rgba(241, 239, 232, 0.10); --accent: #5FB89C; --accent-ink: #0F1A16;
       --accent-soft: rgba(95, 184, 156, 0.14); --accent-glow: rgba(95, 184, 156, 0.18);
       --shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3);
-      --phone-frame: #2A2A27;
     }
   }
   :root[data-theme="dark"] {
@@ -49,7 +47,6 @@
     --line: rgba(241, 239, 232, 0.10); --accent: #5FB89C; --accent-ink: #0F1A16;
     --accent-soft: rgba(95, 184, 156, 0.14); --accent-glow: rgba(95, 184, 156, 0.18);
     --shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 1px 1px rgba(0, 0, 0, 0.3);
-    --phone-frame: #2A2A27;
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -106,8 +103,8 @@
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
   .phone-wrap { position: relative; display: grid; place-items: center; }
   .phone-wrap::before { content: ""; position: absolute; inset: 10% 0; border-radius: 50%; background: radial-gradient(closest-side, var(--accent-glow), transparent 75%); filter: blur(20px); }
-  .phone { position: relative; width: min(300px, 82vw); aspect-ratio: 644 / 1302; max-width: 100%; border-radius: 40px; border: 9px solid var(--phone-frame); background: var(--phone-frame); box-shadow: var(--shadow), 0 30px 60px rgba(23, 22, 15, 0.16); overflow: hidden; }
-  .phone img { width: 100%; height: 100%; object-fit: cover; border-radius: 31px; }
+  .phone { position: relative; width: min(320px, 86vw); max-width: 100%; filter: drop-shadow(0 30px 40px rgba(0, 0, 0, 0.35)); }
+  .phone img { display: block; width: 100%; height: auto; }
 
   .bento { display: grid; grid-template-columns: repeat(3, 1fr); grid-auto-rows: minmax(200px, auto); gap: 14px; margin-top: 40px; }
   .cell { background: var(--surface); border-radius: 22px; padding: 26px; box-shadow: var(--shadow); display: flex; flex-direction: column; gap: 10px; min-width: 0; }
@@ -119,13 +116,12 @@
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
-  .cell.shot .pic { margin: 12px -6px 0; max-height: 400px; border-radius: 26px 26px 0 0; border: 6px solid var(--phone-frame); border-bottom: 0; background: var(--phone-frame); overflow: hidden; flex: 1; min-height: 0; }
-  .cell.shot .pic img { width: 100%; height: 100%; object-fit: cover; object-position: top; border-radius: 20px 20px 0 0; }
+  .cell.shot .pic { margin: auto -6px 0; padding-top: 16px; }
+  .cell.shot .pic img { display: block; width: 100%; height: auto; }
   @media (max-width: 860px) {
     .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
     .cell.privacy { grid-column: span 2; }
     .cell.shot { grid-row: auto; grid-column: span 2; }
-    .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
 
@@ -217,7 +213,7 @@
 <a class="back" href="./">Назад к Slovo</a>
 <h1>Поддержка</h1>
 <p class="intro">Что-то не работает или есть идея для Slovo? Напишите нам. В письме из раздела «Помощь» в «Настройках» приложения версия и устройство уже заполнены.</p>
-<div class="card"><p><a class="btn btn-primary" href="mailto:levgenys11@gmail.com?subject=Slovo%3A%20вопрос">Написать на levgenys11@gmail.com</a></p><p class="hint">Отвечаем в течение нескольких дней. Укажите версию приложения, устройство и что вы ожидали увидеть.</p></div>
+<div class="card"><p><a class="btn btn-primary" href="mailto:byles.app@gmail.com?subject=Slovo%3A%20вопрос">Написать на byles.app@gmail.com</a></p><p class="hint">Отвечаем в течение нескольких дней. Укажите версию приложения, устройство и что вы ожидали увидеть.</p></div>
 <h2>Частые вопросы</h2>
 <div class="faq"><details><summary>Нужен ли Slovo интернет?</summary><p>Только один раз, чтобы скачать речевую модель. Дальше запись и распознавание работают без сети. Синхронизации через iCloud и подпискам, разумеется, нужно подключение.</p></details><details><summary>Как отправить в Slovo голосовую заметку или видео?</summary><p>Откройте запись в «Диктофоне», «Фото», «Файлах» или чате, нажмите «Поделиться» и выберите Slovo. В первый раз Slovo может ещё не быть в ряду приложений:</p>
 <ol><li>Пролистайте ряд приложений влево и нажмите «Ещё».</li><li>Нажмите «Править» в правом верхнем углу.</li><li>Включите Slovo и нажмите зелёный плюс, чтобы добавить его в «Избранные».</li><li>Перетащите Slovo наверх, чтобы оно было первым приложением в меню «Поделиться».</li></ol></details><details><summary>Какую речевую модель выбрать?</summary><p>Slovo само предлагает модель для вашего устройства и языка. «Быстрая» понимает 25 европейских языков и работает быстрее всех. «Самая точная» понимает 99 языков и лучше справляется со сложным звуком. На устройствах с меньшим объёмом памяти доступна одна модель — «Стандартная». Переключить модель можно в «Настройках», в разделе «Речевая модель».</p></details><details><summary>В тексте ошибки. Что делать?</summary><p>Для коротких записей или записей с множеством терминов укажите язык речи вручную вместо «Авто». Попробуйте модель «Самая точная». И держите микрофон ближе: качество записи важнее всего остального.</p></details><details><summary>Где хранятся мои записи и расшифровки?</summary><p>На вашем устройстве, в хранилище приложения. Если включено «Синхронизировать через iCloud», они есть и в вашем iCloud и доступны на других ваших устройствах. Экран «Хранение и вид» в «Настройках» показывает, сколько места занимает приложение. В настройках вы выбираете, оставлять аудио или только текст.</p></details><details><summary>Как удалить мои данные?</summary><p>Смахните расшифровку в «Истории», чтобы удалить её, или откройте и удалите аудио, оставив текст. Экран «Хранение и вид» позволяет очистить всё сразу. Удаление приложения стирает все локальные данные; данные в iCloud можно удалить в «Настройках» iOS: «Учётная запись Apple», iCloud, «Управление хранилищем».</p></details><details><summary>Как отменить или восстановить Slovo Pro?</summary><p>Подписками управляет Apple: откройте «Настройки» iOS, нажмите своё имя, затем «Подписки» и выберите Slovo. Pro остаётся активным до конца оплаченного периода. На новом устройстве откройте Slovo Pro в «Настройках» приложения и нажмите «Восстановить покупки».</p></details><details><summary>Какие устройства поддерживаются?</summary><p>iPhone и iPad с iOS 18 и новее, а также компьютеры Mac с Apple silicon, где Slovo работает как приложение для iPad. Самым точным моделям нужно устройство минимум с 6 ГБ памяти; остальные получают модель «Стандартная».</p></details></div>
@@ -229,7 +225,7 @@
       <a href="terms.html">Условия использования</a>
       <a href="support.html">Поддержка</a>
       <a href="https://apps.apple.com/app/id6812518848">App Store</a>
-      <a href="mailto:levgenys11@gmail.com">levgenys11@gmail.com</a>
+      <a href="mailto:byles.app@gmail.com">byles.app@gmail.com</a>
     </nav>
     <span class="langbox "><select aria-label="Язык" data-lang-select><option value="../support.html">English</option><option value="../ru/support.html" selected>Русский</option><option value="../uk/support.html">Українська</option><option value="../de/support.html">Deutsch</option><option value="../fr/support.html">Français</option><option value="../es/support.html">Español</option><option value="../it/support.html">Italiano</option><option value="../pt-BR/support.html">Português (Brasil)</option><option value="../pl/support.html">Polski</option><option value="../tr/support.html">Türkçe</option><option value="../nl/support.html">Nederlands</option><option value="../zh-Hans/support.html">简体中文</option><option value="../ja/support.html">日本語</option><option value="../ko/support.html">한국어</option></select></span>
   </div>
