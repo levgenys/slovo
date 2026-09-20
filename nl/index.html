@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slovo</title>
-<meta name="description" content="Slovo zet spraak om in tekst, direct op je iPhone en iPad. Neem audio op of importeer een bestand, krijg kant-en-klare tekst met tijdcodes, en niets verlaat je apparaat.">
+<meta name="description" content="Slovo zet spraak om in tekst met AI, direct op je iPhone en iPad. Neem audio op of importeer een bestand, krijg tekst met leestekens en tijdcodes, en audio en tekst verlaten nooit je apparaat.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -190,8 +204,8 @@
     <div class="wrap">
       <div>
         <div class="tc">00:00</div>
-        <h1>Spraak naar tekst.<br><span>Direct op je apparaat.</span></h1>
-        <p class="sub">Neem audio op of importeer een bestand en krijg kant-en-klare tekst met tijdcodes. De herkenning draait op de iPhone zelf, dus opnames verlaten hem nooit.</p>
+        <h1><span class="l1">AI-spraakherkenning.</span><span class="l2">Gegevens verlaten nooit je apparaat.</span></h1>
+        <p class="sub">Neem audio op of importeer een bestand en krijg tekst met leestekens en tijdcodes. De herkenning draait op het apparaat zelf: geen account, geen uploads, geen internet nodig.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Download in de App Store</a>
           <a class="btn btn-secondary" href="./#how">Zo werkt het</a>
@@ -206,23 +220,34 @@
 
   <section class="block" id="features">
     <div class="wrap">
-      <h2>Alles gebeurt op de telefoon</h2>
-      <p class="lead">Slovo downloadt één keer een spraakmodel. Daarna leven de recorder, de herkenning en de tekst allemaal op je apparaat, met of zonder verbinding.</p>
+      <h2>Alles gebeurt op je apparaat</h2>
+      <p class="lead">Slovo downloadt één keer een spraakmodel. Daarna leven de recorder, het neurale netwerk en de tekst op je apparaat, met of zonder verbinding.</p>
       <div class="bento">
         <div class="cell privacy">
-          <div><h3>Niets verlaat je apparaat</h3><p>Het spraakmodel draait op de telefoon. Zet de vliegtuigmodus aan en Slovo zet je stem nog steeds om in tekst. Je hoeft geen account aan te maken en er zit geen server van ons tussen.</p></div>
-          <div class="facts"><span>Geen account</span><span>Geen advertenties</span><span>Geen uploads</span></div>
+          <div><h3>Standaard privé</h3><p>Clouddiensten sturen je opname naar een server. Slovo niet: een neuraal netwerk herkent spraak op het apparaat zelf, en de opname blijft bij jou. Geen account, geen upload, gewoon praten.</p></div>
+          <div class="facts"><span>Geen account</span><span>Geen registratie</span><span>Geen advertenties</span><span>Geen uploads</span></div>
         </div>
         <div class="cell shot">
-          <h3>Jij bepaalt wat je bewaart</h3><p>Verwijder audio na herkenning, zet tijdcodes aan of uit, kies de gesproken taal, synchroniseer of blijf op één apparaat.</p>
-          <div class="pic"><img src="../img/nl/settings.png" data-img="settings.png" width="644" height="1302" alt="Instellingen van Slovo: spraakmodel, tekst opschonen, tijdcodes, gesproken taal, audio verwijderen na herkenning, synchroniseren via iCloud"></div>
+          <h3>Jij bepaalt wat je bewaart</h3><p>Bewaar audio of laat alleen tekst over, zet tijdcodes aan of uit, kies de gesproken taal, synchroniseer of blijf op één apparaat.</p>
+          <div class="pic"><img src="../img/nl/settings.png" data-img="settings.png" width="644" height="1302" alt="Instellingen van Slovo: spraakmodel, tijdcodes, gesproken taal, audio bewaren of alleen tekst, synchroniseren via iCloud"></div>
         </div>
         <div class="cell"><div class="big">99</div><h3>Talen</h3><p>Automatische herkenning, of kies de taal zelf. Twee modellen om uit te kiezen: een snel model voor 25 Europese talen en het nauwkeurigste model voor 99.</p></div>
         <div class="cell"><h3>Opnemen of importeren</h3><p>Een recorder in de app, of een willekeurig bestand: mp3, m4a, wav, mp4. Dictafoonopnames, spraakberichten uit chats en video's komen binnen via het deelmenu.</p></div>
         <div class="cell"><div class="big">4 u</div><h3>Lange opnames</h3><p>Een hele vergadering, hoorcollege of interview in één keer. De opname loopt door op de achtergrond, en de tekst verschijnt terwijl je praat.</p></div>
-        <div class="cell"><h3>Tekst opschonen</h3><p>Een optioneel taalmodel op het apparaat zet leestekens en haalt stopwoorden en herhalingen weg. De tekst leest als een artikel, niet als een stenogram.</p></div>
+        <div class="cell"><h3>Leestekens en tijdcodes</h3><p>De tekst komt meteen met leestekens. Zet tijdcodes aan om te zien op welk moment van de opname iets werd gezegd.</p></div>
         <div class="cell"><h3>Synchroniseren via iCloud</h3><p>Transcripties en audio reizen via je eigen iCloud mee tussen je iPhone, iPad en Mac. Of zet het uit en houd alles op één apparaat.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block compare" id="compare">
+    <div class="wrap">
+      <h2>Slovo en clouddiensten</h2>
+      <p class="lead">Clouddiensten voor transcriptie sturen je opname naar een server en herkennen die daar. Slovo herkent op het apparaat zelf. Dit verandert dat.</p>
+      <table class="cmp">
+        <thead><tr><th></th><th>Clouddienst</th><th class="us">Slovo</th></tr></thead>
+        <tbody><tr><th>Waar spraak wordt herkend</th><td>Op een server</td><td class="us">Op je apparaat</td></tr><tr><th>Waar de audio naartoe gaat</th><td>Naar de server van de dienst</td><td class="us">Blijft op je apparaat</td></tr><tr><th>Wie de tekst kan lezen</th><td>De dienst</td><td class="us">Alleen jij</td></tr><tr><th>Account nodig</th><td>Ja</td><td class="us">Nee</td></tr><tr><th>Internet nodig</th><td>Ja</td><td class="us">Nee</td></tr><tr><th>Waar het wordt bewaard</th><td>In de cloud van de dienst</td><td class="us">Op je apparaat en in je eigen iCloud</td></tr></tbody>
+      </table>
     </div>
   </section>
 
@@ -236,17 +261,17 @@
 
   <section class="block" id="pricing">
     <div class="wrap">
-      <h2>Gratis om te beginnen, Pro als je meer nodig hebt</h2>
-      <p class="lead">Elke functie zit in het gratis abonnement. Slovo Pro haalt alleen de limieten weg op hoeveel audio er wordt herkend.</p>
+      <h2>Gratis beginnen</h2>
+      <p class="lead">Download het en gebruik het zonder registratie: elke functie is meteen beschikbaar. Als je meer nodig hebt, haalt Slovo Pro de limiet weg op hoeveel audio er wordt herkend.</p>
       <div class="plans">
         <div class="plan">
           <h3>Gratis</h3><div class="price">Inbegrepen bij de app</div>
-          <ul><li>60 minuten herkenning per maand</li><li>Maximaal 30 minuten per bestand</li><li>Alle functies: importeren, opschonen, tijdcodes, iCloud-synchronisatie</li></ul>
-          <p class="note">Op de 1e van elke maand komen de minuten terug.</p>
+          <ul><li>Elke functie vanaf dag één: opnemen, importeren, tijdcodes, iCloud</li><li>Geen account, geen kaart</li><li>Elke maand een gratis hoeveelheid herkenning</li></ul>
+          <p class="note">De details en wat je deze maand nog over hebt, zie je in de app.</p>
         </div>
         <div class="plan pro">
           <h3>Slovo Pro</h3><div class="price">Maand- of jaarabonnement</div>
-          <ul><li>Onbeperkt minuten, elke maand</li><li>Opnames en bestanden tot 4 uur</li><li>Dezelfde privéherkenning op het apparaat</li></ul>
+          <ul><li>Herkenning zonder limiet op minuten</li><li>Opnames en bestanden tot 4 uur</li><li>Dezelfde privéherkenning op het apparaat</li></ul>
           <p class="note">De prijzen in jouw valuta zie je in de app. Opzeggen kan altijd via je App Store-instellingen.</p>
         </div>
       </div>
@@ -255,7 +280,7 @@
 
   <section class="block closing">
     <div class="wrap">
-      <div><h2>Jouw woorden, jouw apparaat</h2><p class="lead">Eén download van ongeveer 500 MB voor het spraakmodel. Daarna werkt het overal, zelfs zonder bereik.</p></div>
+      <div><h2>Downloaden en praten</h2><p class="lead">Eén download van ongeveer 500 MB voor het spraakmodel. Daarna werkt het overal, zelfs zonder bereik.</p></div>
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Download in de App Store</a>
     </div>
   </section>

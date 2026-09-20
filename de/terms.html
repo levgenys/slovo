@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Nutzungsbedingungen · Slovo</title>
-<meta name="description" content="Slovo macht aus Sprache Text, direkt auf deinem iPhone und iPad. Nimm Audio auf oder importiere es, bekomme fertigen Text mit Zeitmarken, und nichts verlässt dein Gerät.">
+<meta name="description" content="Slovo macht mit KI aus Sprache Text, direkt auf deinem iPhone und iPad. Nimm Audio auf oder importiere es, bekomme Text mit Satzzeichen und Zeitmarken, und Audio und Text verlassen nie dein Gerät.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -196,7 +210,7 @@
 <h2>Kostenloser Plan und Slovo Pro</h2><p>Der kostenlose Plan erkennt bis zu 60 Minuten Audio pro Kalendermonat und bis zu 30 Minuten je Datei; die Minuten werden am ersten Tag jedes Monats zurückgesetzt. Slovo Pro ist ein automatisch verlängerndes Abo, monatlich oder jährlich, das diese Grenzen aufhebt und Aufnahmen und Dateien bis zu 4 Stunden erlaubt.</p>
 <ul><li>Die Zahlung wird deinem Apple-Account belastet, sobald du den Kauf bestätigst.</li><li>Das Abo verlängert sich automatisch, wenn du es nicht mindestens 24 Stunden vor Ende des laufenden Zeitraums kündigst. Die Verlängerung wird innerhalb der letzten 24 Stunden vor Ablauf des Zeitraums abgebucht.</li><li>Du kannst das Abo in den Einstellungen deines App Store-Accounts verwalten oder kündigen. Nach der Kündigung bleibt Pro bis zum Ende des bezahlten Zeitraums aktiv.</li><li>Wird eine kostenlose Testphase angeboten, verfällt ihr ungenutzter Rest, sobald du ein Abo kaufst.</li><li>Die Preise unterscheiden sich je nach Land und werden dir vor dem Kauf in der App angezeigt. Erstattungen wickelt Apple nach den Regeln des App Store ab.</li><li>Mit „Käufe wiederherstellen“ in der App holst du ein bestehendes Abo auf ein neues Gerät.</li></ul>
 <p>Wir können in künftigen Versionen der App ändern, was der kostenlose Plan und Slovo Pro enthalten. Solche Änderungen verkürzen keinen Zeitraum, den du bereits bezahlt hast.</p>
-<h2>Modelle und Software von Dritten</h2><p>Erkennung und Textbereinigung nutzen offene Modelle, die lokal auf deinem Gerät laufen: Whisper von OpenAI, Parakeet von NVIDIA und Qwen von Alibaba Cloud, jedes unter seiner eigenen Lizenz. Die Modelldateien werden von Hugging Face heruntergeladen. Wir können in künftigen Versionen Modelle hinzufügen, ersetzen oder einstellen; ein Modell, das bereits auf deinem Gerät ist, funktioniert weiter, bis du es entfernst.</p>
+<h2>Modelle und Software von Dritten</h2><p>Für die Erkennung werden offene Sprachmodelle verwendet, die lokal auf deinem Gerät laufen, jedes unter seiner eigenen Lizenz. Die Modelle und Software von Drittanbietern, die in der App enthalten sind, sind mit ihren Lizenzen auf der Seite <a href="../licenses.html">Lizenzen</a> (auf Englisch) aufgeführt. Wir können in künftigen Versionen Modelle hinzufügen, ersetzen oder einstellen; ein Modell, das bereits auf deinem Gerät ist, funktioniert weiter, bis du es entfernst.</p>
 <h2>Deine Daten</h2><p>Alles, was du in Slovo erstellst, wird auf deinem Gerät gespeichert und, wenn du die Synchronisierung einschaltest, in deiner eigenen iCloud. Wir behalten keine Kopien und können nichts wiederherstellen. Sichere dein Gerät, wenn dir die Transkripte wichtig sind. Was die App mit Daten tut, beschreibt unsere <a href="privacy.html">Datenschutzerklärung</a>.</p>
 <h2>Keine Gewährleistung</h2><p>Die App wird bereitgestellt, wie sie ist. Soweit gesetzlich zulässig, übernehmen wir keine Gewähr für ihre Genauigkeit, Verfügbarkeit oder Eignung für einen bestimmten Zweck und haften nicht für Schäden, die aus der Nutzung der App oder aus Fehlern im erkannten Text entstehen.</p>
 <h2>Änderungen an diesen Bedingungen</h2><p>Wir können diese Bedingungen aktualisieren, wenn sich die App ändert. Das Datum oben zeigt die aktuelle Fassung. Wer die App nach einer Aktualisierung weiter nutzt, akzeptiert die neuen Bedingungen.</p>

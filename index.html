@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slovo</title>
-<meta name="description" content="Slovo turns speech into text right on your iPhone and iPad. Record or import audio, get finished text with timecodes, and nothing leaves your device.">
+<meta name="description" content="Slovo turns speech into text with AI right on your iPhone and iPad. Record or import audio, get text with punctuation and timecodes, and audio and text never leave your device.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="img/icon.png">
 <link rel="apple-touch-icon" href="img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -190,8 +204,8 @@
     <div class="wrap">
       <div>
         <div class="tc">00:00</div>
-        <h1>Speech to text.<br><span>Right on your device.</span></h1>
-        <p class="sub">Record or import audio and get finished text with timecodes. Recognition runs on the iPhone itself, so recordings never leave it.</p>
+        <h1><span class="l1">AI speech to text.</span><span class="l2">Data never leaves your device.</span></h1>
+        <p class="sub">Record or import audio and get text with punctuation and timecodes. Recognition runs on the device itself: no account, no uploads, no internet needed.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Download on the App Store</a>
           <a class="btn btn-secondary" href="./#how">See how it works</a>
@@ -206,23 +220,34 @@
 
   <section class="block" id="features">
     <div class="wrap">
-      <h2>Everything happens on the phone</h2>
-      <p class="lead">Slovo downloads a speech model once. After that, the recorder, the recognition and the text all live on your device, with or without a connection.</p>
+      <h2>Everything happens on your device</h2>
+      <p class="lead">Slovo downloads a speech model once. After that the recorder, the neural network and the text all live on your device, with or without a connection.</p>
       <div class="bento">
         <div class="cell privacy">
-          <div><h3>Nothing leaves your device</h3><p>The speech model runs on the phone. Turn on airplane mode and Slovo still turns your voice into text. There is no account to create and no server of ours in between.</p></div>
-          <div class="facts"><span>No account</span><span>No ads</span><span>No uploads</span></div>
+          <div><h3>Private by default</h3><p>Cloud services send your recording to a server. Slovo does not: a neural network recognizes speech on the device itself, and the recording stays with you. No account, no upload, just talk.</p></div>
+          <div class="facts"><span>No account</span><span>No sign-up</span><span>No ads</span><span>No uploads</span></div>
         </div>
         <div class="cell shot">
-          <h3>You decide what to keep</h3><p>Delete audio after recognition, keep timecodes on or off, choose the speech language, sync or stay on one device.</p>
-          <div class="pic"><img src="img/en/settings.png" data-img="settings.png" width="644" height="1302" alt="Slovo settings: speech model, text cleanup, timecodes, speech language, delete audio after recognition, sync through iCloud"></div>
+          <h3>You decide what to keep</h3><p>Keep the audio or leave only the text, keep timecodes on or off, choose the speech language, sync or stay on one device.</p>
+          <div class="pic"><img src="img/en/settings.png" data-img="settings.png" width="644" height="1302" alt="Slovo settings: speech model, timecodes, speech language, keep audio or text only, sync through iCloud"></div>
         </div>
         <div class="cell"><div class="big">99</div><h3>Languages</h3><p>Auto detection, or pick the language yourself. Two models to choose from: a fast one for 25 European languages and the most accurate one for 99.</p></div>
         <div class="cell"><h3>Record or import</h3><p>A recorder inside the app, or any file: mp3, m4a, wav, mp4. Voice memos, chat voice messages and videos arrive through the Share sheet.</p></div>
         <div class="cell"><div class="big">4 h</div><h3>Long recordings</h3><p>A whole meeting, lecture or interview in one go. Recording keeps going in the background, and the text appears while you speak.</p></div>
-        <div class="cell"><h3>Clean up the text</h3><p>An optional on-device language model adds punctuation, removes filler words and repetitions. The text reads like an article, not a stenogram.</p></div>
+        <div class="cell"><h3>Punctuation and timecodes</h3><p>The text comes with punctuation. Turn timecodes on to see at which moment of the recording something was said.</p></div>
         <div class="cell"><h3>Sync through iCloud</h3><p>Transcripts and audio move between your iPhone, iPad and Mac through your own iCloud. Or switch it off and keep everything on one device.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block compare" id="compare">
+    <div class="wrap">
+      <h2>Slovo and cloud services</h2>
+      <p class="lead">Cloud transcription apps send your recording to a server and recognize it there. Slovo recognizes on the device itself. Here is what that changes.</p>
+      <table class="cmp">
+        <thead><tr><th></th><th>Cloud service</th><th class="us">Slovo</th></tr></thead>
+        <tbody><tr><th>Where speech is recognized</th><td>On a server</td><td class="us">On your device</td></tr><tr><th>Where the audio goes</th><td>To the service's server</td><td class="us">Stays on your device</td></tr><tr><th>Who can read the text</th><td>The service</td><td class="us">Only you</td></tr><tr><th>Account needed</th><td>Yes</td><td class="us">No</td></tr><tr><th>Internet needed</th><td>Yes</td><td class="us">No</td></tr><tr><th>Where it is stored</th><td>In the service's cloud</td><td class="us">On your device and in your own iCloud</td></tr></tbody>
+      </table>
     </div>
   </section>
 
@@ -236,17 +261,17 @@
 
   <section class="block" id="pricing">
     <div class="wrap">
-      <h2>Free to start, Pro when you need more</h2>
-      <p class="lead">Every feature is included in the free plan. Slovo Pro only removes the limits on how much audio is recognized.</p>
+      <h2>Start free</h2>
+      <p class="lead">Download it and use it with no sign-up: every feature is available right away. When you need more, Slovo Pro removes the limits on how much audio is recognized.</p>
       <div class="plans">
         <div class="plan">
           <h3>Free</h3><div class="price">Included with the app</div>
-          <ul><li>60 minutes of recognition a month</li><li>Up to 30 minutes per file</li><li>All features: import, cleanup, timecodes, iCloud sync</li></ul>
-          <p class="note">The minutes come back on the 1st of every month.</p>
+          <ul><li>Every feature from day one: recording, import, timecodes, iCloud</li><li>No account, no card</li><li>A free amount of recognition every month</li></ul>
+          <p class="note">The details and what is left this month are shown in the app.</p>
         </div>
         <div class="plan pro">
           <h3>Slovo Pro</h3><div class="price">Monthly or yearly subscription</div>
-          <ul><li>Unlimited minutes, every month</li><li>Recordings and files up to 4 hours</li><li>The same private, on-device recognition</li></ul>
+          <ul><li>Recognition with no limit on minutes</li><li>Recordings and files up to 4 hours</li><li>The same private, on-device recognition</li></ul>
           <p class="note">Prices in your currency are shown in the app. Cancel anytime in your App Store settings.</p>
         </div>
       </div>
@@ -255,7 +280,7 @@
 
   <section class="block closing">
     <div class="wrap">
-      <div><h2>Your words, your device</h2><p class="lead">One download of about 500 MB for the speech model. Then it works anywhere, even without a signal.</p></div>
+      <div><h2>Download it and talk</h2><p class="lead">One download of about 500 MB for the speech model. Then it works anywhere, even without a signal.</p></div>
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Download on the App Store</a>
     </div>
   </section>

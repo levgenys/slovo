@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slovo</title>
-<meta name="description" content="Slovo は、iPhone と iPad の上で音声をテキストに変換します。録音または音声ファイルの読み込みから、タイムコード付きの整ったテキストまで。データがデバイスの外に出ることはありません。">
+<meta name="description" content="Slovo は、AI を使って iPhone と iPad の上で直接音声をテキストに変換します。録音または音声ファイルを読み込み、句読点とタイムコード付きのテキストを取得できます。音声とテキストはデバイスの外に出ることはありません。">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -190,8 +204,8 @@
     <div class="wrap">
       <div>
         <div class="tc">00:00</div>
-        <h1>音声をテキストに。<br><span>すべてデバイスの上で。</span></h1>
-        <p class="sub">録音するか音声ファイルを読み込むだけで、タイムコード付きの整ったテキストが手に入ります。認識は iPhone 自体で行われるため、録音が外に出ることはありません。</p>
+        <h1><span class="l1">AIで音声をテキストに。</span><span class="l2">データはデバイスの外に出ません。</span></h1>
+        <p class="sub">録音するか音声ファイルを読み込むと、句読点とタイムコード付きのテキストが得られます。認識はデバイス自体で行われます。アカウント不要、アップロード不要、インターネット接続も不要です。</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">App Store でダウンロード</a>
           <a class="btn btn-secondary" href="./#how">仕組みを見る</a>
@@ -206,23 +220,34 @@
 
   <section class="block" id="features">
     <div class="wrap">
-      <h2>すべてはスマートフォンの中で</h2>
-      <p class="lead">Slovo は音声認識モデルを一度だけダウンロードします。その後は、レコーダーも認識もテキストも、接続の有無にかかわらず、すべてあなたのデバイスの中で動きます。</p>
+      <h2>すべてはデバイスの中で</h2>
+      <p class="lead">Slovo は音声モデルを一度だけダウンロードします。その後は、レコーダーもニューラルネットワークもテキストも、接続の有無にかかわらずすべてあなたのデバイスの中にあります。</p>
       <div class="bento">
         <div class="cell privacy">
-          <div><h3>データはデバイスの外に出ません</h3><p>音声認識モデルはスマートフォン上で動作します。機内モードにしても、Slovo はそのまま声をテキストに変えます。作成するアカウントも、間に入る私たちのサーバーもありません。</p></div>
-          <div class="facts"><span>アカウント不要</span><span>広告なし</span><span>アップロードなし</span></div>
+          <div><h3>デフォルトでプライベート</h3><p>クラウドサービスは録音をサーバーに送信します。Slovo は違います。ニューラルネットワークがデバイス自体で音声を認識し、録音はあなたの手元に残ります。アカウントも、アップロードも不要。ただ話すだけです。</p></div>
+          <div class="facts"><span>アカウント不要</span><span>登録不要</span><span>広告なし</span><span>アップロードなし</span></div>
         </div>
         <div class="cell shot">
-          <h3>何を残すかはあなた次第</h3><p>認識後に音声を削除する、タイムコードのオン・オフ、音声の言語の選択、同期するか 1 台だけで使うか。すべて自由に決められます。</p>
-          <div class="pic"><img src="../img/ja/settings.png" data-img="settings.png" width="644" height="1302" alt="Slovo の設定：音声認識モデル、テキストを整える、タイムコード、音声の言語、認識後に音声を削除、iCloud で同期"></div>
+          <h3>何を残すかはあなた次第</h3><p>音声を残すかテキストだけにするか、タイムコードのオン・オフ、音声の言語の選択、同期するか 1 台だけで使うか。すべて自由に決められます。</p>
+          <div class="pic"><img src="../img/ja/settings.png" data-img="settings.png" width="644" height="1302" alt="Slovo の設定：音声認識モデル、タイムコード、音声の言語、音声を残すかテキストのみにするか、iCloud で同期"></div>
         </div>
         <div class="cell"><div class="big">99</div><h3>言語に対応</h3><p>自動判別でも、自分で言語を選んでも。モデルは 2 種類から選べます。ヨーロッパの 25 言語に対応する高速なモデルと、99 言語に対応する最も高精度なモデルです。</p></div>
         <div class="cell"><h3>録音または読み込み</h3><p>アプリ内のレコーダーでも、mp3、m4a、wav、mp4 の任意のファイルでも。ボイスメモ、チャットの音声メッセージ、動画は共有シートから受け取れます。</p></div>
         <div class="cell"><div class="big">4 時間</div><h3>長時間の録音も</h3><p>会議、講義、インタビューをまるごと一度に。録音はバックグラウンドでも続き、話している間にテキストが表示されます。</p></div>
-        <div class="cell"><h3>テキストを整える</h3><p>オプションのデバイス上の言語モデルが、句読点を補い、「えー」などのつなぎ言葉や繰り返しを取り除きます。速記録ではなく、記事のように読めるテキストになります。</p></div>
+        <div class="cell"><h3>句読点とタイムコード</h3><p>テキストには句読点が付きます。タイムコードをオンにすると、録音のどの時点で何が話されたかがわかります。</p></div>
         <div class="cell"><h3>iCloud で同期</h3><p>文字起こしと音声は、あなた自身の iCloud を通じて iPhone、iPad、Mac の間を行き来します。オフにすれば、すべてを 1 台のデバイスだけに残すこともできます。</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block compare" id="compare">
+    <div class="wrap">
+      <h2>Slovo とクラウドサービス</h2>
+      <p class="lead">クラウドの文字起こしアプリは、録音をサーバーに送信してそこで認識します。Slovo はデバイス自体で認識します。それによって何が変わるかをご紹介します。</p>
+      <table class="cmp">
+        <thead><tr><th></th><th>クラウドサービス</th><th class="us">Slovo</th></tr></thead>
+        <tbody><tr><th>音声が認識される場所</th><td>サーバー上</td><td class="us">デバイス上</td></tr><tr><th>音声の送信先</th><td>サービスのサーバーへ</td><td class="us">デバイスに残る</td></tr><tr><th>テキストを読めるのは誰か</th><td>サービス</td><td class="us">あなただけ</td></tr><tr><th>アカウントが必要か</th><td>必要</td><td class="us">不要</td></tr><tr><th>インターネットが必要か</th><td>必要</td><td class="us">不要</td></tr><tr><th>保存場所</th><td>サービスのクラウド</td><td class="us">デバイスとあなた自身の iCloud</td></tr></tbody>
+      </table>
     </div>
   </section>
 
@@ -236,17 +261,17 @@
 
   <section class="block" id="pricing">
     <div class="wrap">
-      <h2>無料で始めて、必要になったら Pro へ</h2>
-      <p class="lead">すべての機能は無料プランに含まれています。Slovo Pro は、認識できる音声の量の上限をなくすだけです。</p>
+      <h2>無料で始める</h2>
+      <p class="lead">登録せずにダウンロードしてすぐに使えます。すべての機能がその場で使えます。もっと必要になったら、Slovo Pro が認識できる音声の量の上限をなくします。</p>
       <div class="plans">
         <div class="plan">
           <h3>無料</h3><div class="price">アプリに含まれています</div>
-          <ul><li>月 60 分の認識</li><li>1 ファイルあたり最大 30 分</li><li>すべての機能：読み込み、テキストの整文、タイムコード、iCloud 同期</li></ul>
-          <p class="note">認識できる分数は毎月 1 日に戻ります。</p>
+          <ul><li>初日からすべての機能：録音、読み込み、タイムコード、iCloud</li><li>アカウント不要、カード不要</li><li>毎月無料で使える認識量</li></ul>
+          <p class="note">詳細と今月の残量はアプリ内で確認できます。</p>
         </div>
         <div class="plan pro">
           <h3>Slovo Pro</h3><div class="price">月額または年額のサブスクリプション</div>
-          <ul><li>毎月、無制限の分数</li><li>最大 4 時間の録音とファイル</li><li>変わらずプライベートな、デバイス上での認識</li></ul>
+          <ul><li>分数の上限なしで認識</li><li>最大 4 時間の録音とファイル</li><li>変わらずプライベートな、デバイス上での認識</li></ul>
           <p class="note">お住まいの地域の通貨での価格はアプリ内に表示されます。App Store の設定からいつでも解約できます。</p>
         </div>
       </div>
@@ -255,7 +280,7 @@
 
   <section class="block closing">
     <div class="wrap">
-      <div><h2>あなたの言葉は、あなたのデバイスに</h2><p class="lead">音声認識モデルのダウンロードは約 500 MB、一度だけ。あとは電波のない場所でも、どこでも使えます。</p></div>
+      <div><h2>ダウンロードして、話す</h2><p class="lead">音声認識モデルのダウンロードは約 500 MB、一度だけ。あとは電波のない場所でも、どこでも使えます。</p></div>
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">App Store でダウンロード</a>
     </div>
   </section>

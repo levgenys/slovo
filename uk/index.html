@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slovo</title>
-<meta name="description" content="Slovo перетворює мовлення на текст просто на вашому iPhone та iPad. Записуйте або імпортуйте аудіо, отримуйте готовий текст із таймкодами — і нічого не залишає ваш пристрій.">
+<meta name="description" content="Slovo перетворює мовлення на текст за допомогою AI просто на вашому iPhone та iPad. Записуйте або імпортуйте аудіо, отримуйте текст із пунктуацією та таймкодами — аудіо й текст ніколи не залишають ваш пристрій.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -190,8 +204,8 @@
     <div class="wrap">
       <div>
         <div class="tc">00:00</div>
-        <h1>Мовлення в текст.<br><span>Просто на пристрої.</span></h1>
-        <p class="sub">Записуйте або імпортуйте аудіо й отримуйте готовий текст із таймкодами. Розпізнавання відбувається на самому iPhone, тож записи ніколи його не залишають.</p>
+        <h1><span class="l1">AI-розшифровка мовлення.</span><span class="l2">Дані ніколи не залишають ваш пристрій.</span></h1>
+        <p class="sub">Записуйте або імпортуйте аудіо й отримуйте текст із пунктуацією та таймкодами. Розпізнавання відбувається на самому пристрої: без облікового запису, без вивантаження на сервер, без інтернету.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Завантажити в App Store</a>
           <a class="btn btn-secondary" href="./#how">Як це працює</a>
@@ -206,23 +220,34 @@
 
   <section class="block" id="features">
     <div class="wrap">
-      <h2>Усе відбувається на телефоні</h2>
-      <p class="lead">Slovo один раз завантажує мовленнєву модель. Після цього запис, розпізнавання й текст живуть на вашому пристрої — з інтернетом чи без.</p>
+      <h2>Усе відбувається на вашому пристрої</h2>
+      <p class="lead">Slovo один раз завантажує мовленнєву модель. Після цього диктофон, нейромережа і текст живуть на вашому пристрої — з інтернетом чи без.</p>
       <div class="bento">
         <div class="cell privacy">
-          <div><h3>Нічого не залишає ваш пристрій</h3><p>Мовленнєва модель працює на телефоні. Увімкніть авіарежим — і Slovo так само перетворить ваш голос на текст. Не треба створювати обліковий запис, і між вами й текстом немає нашого сервера.</p></div>
-          <div class="facts"><span>Без облікового запису</span><span>Без реклами</span><span>Без вивантаження на сервер</span></div>
+          <div><h3>Приватність за замовчуванням</h3><p>Хмарні сервіси надсилають ваш запис на сервер. Slovo — ні: нейромережа розпізнає мовлення просто на пристрої, а запис залишається у вас. Без облікового запису, без вивантаження — просто говоріть.</p></div>
+          <div class="facts"><span>Без облікового запису</span><span>Без реєстрації</span><span>Без реклами</span><span>Без вивантаження на сервер</span></div>
         </div>
         <div class="cell shot">
-          <h3>Ви вирішуєте, що зберігати</h3><p>Видаляйте аудіо після розпізнавання, вмикайте або вимикайте таймкоди, вибирайте мову мовлення, синхронізуйте між пристроями або тримайте все на одному.</p>
-          <div class="pic"><img src="../img/uk/settings.png" data-img="settings.png" width="644" height="1302" alt="Параметри Slovo: мовленнєва модель, покращення тексту, таймкоди, мова мовлення, видалення аудіо після розпізнавання, синхронізація через iCloud"></div>
+          <h3>Ви вирішуєте, що зберігати</h3><p>Зберігайте аудіо або залишайте тільки текст, вмикайте або вимикайте таймкоди, вибирайте мову мовлення, синхронізуйте між пристроями або тримайте все на одному.</p>
+          <div class="pic"><img src="../img/uk/settings.png" data-img="settings.png" width="644" height="1302" alt="Параметри Slovo: мовленнєва модель, таймкоди, мова мовлення, збереження аудіо або лише тексту, синхронізація через iCloud"></div>
         </div>
         <div class="cell"><div class="big">99</div><h3>Мови</h3><p>Автовизначення або вибір мови вручну. Дві моделі на вибір: швидка для 25 європейських мов і найточніша для 99.</p></div>
         <div class="cell"><h3>Записуйте або імпортуйте</h3><p>Диктофон у самому застосунку або будь-який файл: mp3, m4a, wav, mp4. Голосові нотатки, голосові повідомлення з чатів і відео потрапляють у Slovo через меню «Поділитися».</p></div>
         <div class="cell"><div class="big">4 год</div><h3>Довгі записи</h3><p>Ціла нарада, лекція чи інтерв’ю за один раз. Запис триває у фоні, а текст з’являється, поки ви говорите.</p></div>
-        <div class="cell"><h3>Покращувати текст</h3><p>Необов’язкова мовна модель на пристрої розставляє розділові знаки, прибирає слова-паразити й повтори. Текст читається як стаття, а не як стенограма.</p></div>
+        <div class="cell"><h3>Пунктуація і таймкоди</h3><p>Текст одразу з пунктуацією. Увімкніть таймкоди, щоб бачити, в який момент запису щось було сказано.</p></div>
         <div class="cell"><h3>Синхронізувати через iCloud</h3><p>Розшифровки й аудіо переходять між вашими iPhone, iPad і Mac через ваш власний iCloud. Або вимкніть синхронізацію й тримайте все на одному пристрої.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block compare" id="compare">
+    <div class="wrap">
+      <h2>Slovo та хмарні сервіси</h2>
+      <p class="lead">Хмарні застосунки для розшифровки надсилають ваш запис на сервер і розпізнають його там. Slovo розпізнає прямо на пристрої. Ось що це змінює.</p>
+      <table class="cmp">
+        <thead><tr><th></th><th>Хмарний сервіс</th><th class="us">Slovo</th></tr></thead>
+        <tbody><tr><th>Де розпізнається мовлення</th><td>На сервері</td><td class="us">На вашому пристрої</td></tr><tr><th>Куди йде аудіо</th><td>На сервер сервісу</td><td class="us">Залишається на вашому пристрої</td></tr><tr><th>Хто може прочитати текст</th><td>Сервіс</td><td class="us">Тільки ви</td></tr><tr><th>Потрібен обліковий запис</th><td>Так</td><td class="us">Ні</td></tr><tr><th>Потрібен інтернет</th><td>Так</td><td class="us">Ні</td></tr><tr><th>Де зберігається</th><td>У хмарі сервісу</td><td class="us">На вашому пристрої та у вашому власному iCloud</td></tr></tbody>
+      </table>
     </div>
   </section>
 
@@ -236,17 +261,17 @@
 
   <section class="block" id="pricing">
     <div class="wrap">
-      <h2>Безкоштовно для початку, Pro — коли потрібно більше</h2>
-      <p class="lead">Усі функції доступні в безкоштовному тарифі. Slovo Pro лише знімає обмеження на кількість розпізнаного аудіо.</p>
+      <h2>Почніть безкоштовно</h2>
+      <p class="lead">Завантажте й користуйтеся без реєстрації: усі функції доступні одразу. Коли знадобиться більше, Slovo Pro знімає обмеження на обсяг розпізнавання.</p>
       <div class="plans">
         <div class="plan">
           <h3>Безкоштовно</h3><div class="price">Входить у застосунок</div>
-          <ul><li>60 хвилин розпізнавання на місяць</li><li>До 30 хвилин на файл</li><li>Усі функції: імпорт, покращення тексту, таймкоди, синхронізація через iCloud</li></ul>
-          <p class="note">Хвилини повертаються 1-го числа кожного місяця.</p>
+          <ul><li>Усі функції з першого дня: запис, імпорт, таймкоди, iCloud</li><li>Без облікового запису й картки</li><li>Безкоштовний обсяг розпізнавання щомісяця</li></ul>
+          <p class="note">Подробиці й залишок на цей місяць показано в застосунку.</p>
         </div>
         <div class="plan pro">
           <h3>Slovo Pro</h3><div class="price">Місячна або річна підписка</div>
-          <ul><li>Необмежені хвилини щомісяця</li><li>Записи й файли до 4 годин</li><li>Те саме приватне розпізнавання на пристрої</li></ul>
+          <ul><li>Розпізнавання без обмеження за хвилинами</li><li>Записи й файли до 4 годин</li><li>Те саме приватне розпізнавання на пристрої</li></ul>
           <p class="note">Ціни у вашій валюті показано в застосунку. Скасувати підписку можна будь-коли в параметрах App Store.</p>
         </div>
       </div>
@@ -255,7 +280,7 @@
 
   <section class="block closing">
     <div class="wrap">
-      <div><h2>Ваші слова, ваш пристрій</h2><p class="lead">Одне завантаження близько 500 МБ для мовленнєвої моделі. Далі все працює будь-де, навіть без зв’язку.</p></div>
+      <div><h2>Завантажте — і говоріть</h2><p class="lead">Одне завантаження близько 500 МБ для мовленнєвої моделі. Далі все працює будь-де, навіть без зв’язку.</p></div>
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Завантажити в App Store</a>
     </div>
   </section>

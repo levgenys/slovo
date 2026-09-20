@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slovo</title>
-<meta name="description" content="Slovo zamienia mowę w tekst bezpośrednio na Twoim iPhonie i iPadzie. Nagraj lub zaimportuj dźwięk, odbierz gotowy tekst ze znacznikami czasu — i nic nie opuszcza urządzenia.">
+<meta name="description" content="Slovo zamienia mowę w tekst z AI bezpośrednio na Twoim iPhonie i iPadzie. Nagraj lub zaimportuj dźwięk, odbierz tekst z interpunkcją i znacznikami czasu — dźwięk i tekst nigdy nie opuszczają urządzenia.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -190,8 +204,8 @@
     <div class="wrap">
       <div>
         <div class="tc">00:00</div>
-        <h1>Mowa na tekst.<br><span>Prosto na Twoim urządzeniu.</span></h1>
-        <p class="sub">Nagraj lub zaimportuj dźwięk i odbierz gotowy tekst ze znacznikami czasu. Rozpoznawanie działa na samym iPhonie, więc nagrania nigdy go nie opuszczają.</p>
+        <h1><span class="l1">Transkrypcja mowy z AI.</span><span class="l2">Dane nigdy nie opuszczają Twojego urządzenia.</span></h1>
+        <p class="sub">Nagraj lub zaimportuj dźwięk i odbierz tekst z interpunkcją i znacznikami czasu. Rozpoznawanie działa na samym urządzeniu: bez konta, bez wysyłania plików, bez internetu.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Pobierz w App Store</a>
           <a class="btn btn-secondary" href="./#how">Zobacz, jak to działa</a>
@@ -206,23 +220,34 @@
 
   <section class="block" id="features">
     <div class="wrap">
-      <h2>Wszystko dzieje się w telefonie</h2>
-      <p class="lead">Slovo pobiera model mowy tylko raz. Od tej chwili dyktafon, rozpoznawanie i tekst mieszkają na Twoim urządzeniu — z internetem albo bez niego.</p>
+      <h2>Wszystko dzieje się na Twoim urządzeniu</h2>
+      <p class="lead">Slovo pobiera model mowy tylko raz. Od tej chwili dyktafon, sieć neuronowa i tekst mieszkają na Twoim urządzeniu — z internetem albo bez niego.</p>
       <div class="bento">
         <div class="cell privacy">
-          <div><h3>Nic nie opuszcza urządzenia</h3><p>Model mowy działa w telefonie. Włącz tryb samolotowy, a Slovo dalej zamienia Twój głos w tekst. Nie trzeba zakładać konta, a pomiędzy nie stoi żaden nasz serwer.</p></div>
-          <div class="facts"><span>Bez konta</span><span>Bez reklam</span><span>Bez wysyłania</span></div>
+          <div><h3>Domyślnie prywatne</h3><p>Usługi w chmurze wysyłają Twoje nagranie na serwer. Slovo nie: sieć neuronowa rozpoznaje mowę na samym urządzeniu, a nagranie zostaje przy Tobie. Bez konta, bez wysyłania — po prostu mów.</p></div>
+          <div class="facts"><span>Bez konta</span><span>Bez rejestracji</span><span>Bez reklam</span><span>Bez wysyłania</span></div>
         </div>
         <div class="cell shot">
-          <h3>Ty decydujesz, co zostaje</h3><p>Usuwaj dźwięk po rozpoznaniu, włącz lub wyłącz znaczniki czasu, wybierz język mowy, synchronizuj albo zostań na jednym urządzeniu.</p>
-          <div class="pic"><img src="../img/pl/settings.png" data-img="settings.png" width="644" height="1302" alt="Ustawienia Slovo: model mowy, porządkowanie tekstu, znaczniki czasu, język mowy, usuwanie dźwięku po rozpoznaniu, synchronizacja przez iCloud"></div>
+          <h3>Ty decydujesz, co zostaje</h3><p>Zachowaj dźwięk albo zostaw sam tekst, włącz lub wyłącz znaczniki czasu, wybierz język mowy, synchronizuj albo zostań na jednym urządzeniu.</p>
+          <div class="pic"><img src="../img/pl/settings.png" data-img="settings.png" width="644" height="1302" alt="Ustawienia Slovo: model mowy, znaczniki czasu, język mowy, zachowanie dźwięku albo samego tekstu, synchronizacja przez iCloud"></div>
         </div>
         <div class="cell"><div class="big">99</div><h3>języków</h3><p>Automatyczne wykrywanie albo wybór języka ręcznie. Dwa modele do wyboru: szybki dla 25 języków europejskich i najdokładniejszy dla 99.</p></div>
         <div class="cell"><h3>Nagraj lub zaimportuj</h3><p>Dyktafon w aplikacji albo dowolny plik: mp3, m4a, wav, mp4. Notatki głosowe, wiadomości głosowe z czatów i wideo trafiają do Slovo przez arkusz udostępniania.</p></div>
         <div class="cell"><div class="big">4 godz.</div><h3>Długie nagrania</h3><p>Całe spotkanie, wykład lub wywiad za jednym razem. Nagrywanie trwa w tle, a tekst pojawia się, gdy mówisz.</p></div>
-        <div class="cell"><h3>Porządkuj tekst</h3><p>Opcjonalny model językowy działający na urządzeniu dodaje interpunkcję, usuwa wypełniacze i powtórzenia. Tekst czyta się jak artykuł, a nie stenogram.</p></div>
+        <div class="cell"><h3>Interpunkcja i znaczniki czasu</h3><p>Tekst od razu ma interpunkcję. Włącz znaczniki czasu, aby zobaczyć, w którym momencie nagrania coś zostało powiedziane.</p></div>
         <div class="cell"><h3>Synchronizuj przez iCloud</h3><p>Transkrypcje i dźwięk wędrują między Twoim iPhonem, iPadem i Makiem przez Twój własny iCloud. Albo wyłącz synchronizację i trzymaj wszystko na jednym urządzeniu.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block compare" id="compare">
+    <div class="wrap">
+      <h2>Slovo a usługi w chmurze</h2>
+      <p class="lead">Chmurowe aplikacje do transkrypcji wysyłają Twoje nagranie na serwer i tam je rozpoznają. Slovo rozpoznaje na samym urządzeniu. Oto co to zmienia.</p>
+      <table class="cmp">
+        <thead><tr><th></th><th>Usługa w chmurze</th><th class="us">Slovo</th></tr></thead>
+        <tbody><tr><th>Gdzie rozpoznawana jest mowa</th><td>Na serwerze</td><td class="us">Na Twoim urządzeniu</td></tr><tr><th>Dokąd trafia dźwięk</th><td>Na serwer usługi</td><td class="us">Zostaje na Twoim urządzeniu</td></tr><tr><th>Kto może przeczytać tekst</th><td>Usługa</td><td class="us">Tylko Ty</td></tr><tr><th>Wymagane konto</th><td>Tak</td><td class="us">Nie</td></tr><tr><th>Wymagany internet</th><td>Tak</td><td class="us">Nie</td></tr><tr><th>Gdzie jest przechowywane</th><td>W chmurze usługi</td><td class="us">Na Twoim urządzeniu i w Twoim własnym iCloud</td></tr></tbody>
+      </table>
     </div>
   </section>
 
@@ -236,17 +261,17 @@
 
   <section class="block" id="pricing">
     <div class="wrap">
-      <h2>Zacznij za darmo, weź Pro, gdy potrzebujesz więcej</h2>
-      <p class="lead">Wszystkie funkcje są w planie bezpłatnym. Slovo Pro zdejmuje tylko limity na to, ile dźwięku zostanie rozpoznane.</p>
+      <h2>Zacznij za darmo</h2>
+      <p class="lead">Pobierz i korzystaj bez rejestracji: wszystkie funkcje są dostępne od razu. Gdy potrzebujesz więcej, Slovo Pro znosi limity na to, ile dźwięku zostanie rozpoznane.</p>
       <div class="plans">
         <div class="plan">
           <h3>Bezpłatny</h3><div class="price">W cenie aplikacji</div>
-          <ul><li>60 minut rozpoznawania miesięcznie</li><li>Do 30 minut na plik</li><li>Wszystkie funkcje: import, porządkowanie, znaczniki czasu, synchronizacja iCloud</li></ul>
-          <p class="note">Minuty wracają pierwszego dnia każdego miesiąca.</p>
+          <ul><li>Wszystkie funkcje od pierwszego dnia: nagrywanie, import, znaczniki czasu, iCloud</li><li>Bez konta, bez karty</li><li>Bezpłatna pula rozpoznawania co miesiąc</li></ul>
+          <p class="note">Szczegóły i to, ile zostało w tym miesiącu, zobaczysz w aplikacji.</p>
         </div>
         <div class="plan pro">
           <h3>Slovo Pro</h3><div class="price">Subskrypcja miesięczna lub roczna</div>
-          <ul><li>Nielimitowane minuty, co miesiąc</li><li>Nagrania i pliki do 4 godzin</li><li>To samo prywatne rozpoznawanie na urządzeniu</li></ul>
+          <ul><li>Rozpoznawanie bez limitu minut</li><li>Nagrania i pliki do 4 godzin</li><li>To samo prywatne rozpoznawanie na urządzeniu</li></ul>
           <p class="note">Ceny w Twojej walucie zobaczysz w aplikacji. Anuluj w dowolnej chwili w ustawieniach App Store.</p>
         </div>
       </div>
@@ -255,7 +280,7 @@
 
   <section class="block closing">
     <div class="wrap">
-      <div><h2>Twoje słowa, Twoje urządzenie</h2><p class="lead">Jedno pobranie modelu mowy, około 500 MB. Potem działa wszędzie, nawet bez zasięgu.</p></div>
+      <div><h2>Pobierz i zacznij mówić</h2><p class="lead">Jedno pobranie modelu mowy, około 500 MB. Potem działa wszędzie, nawet bez zasięgu.</p></div>
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Pobierz w App Store</a>
     </div>
   </section>

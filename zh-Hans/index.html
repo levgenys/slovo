@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slovo</title>
-<meta name="description" content="Slovo 直接在你的 iPhone 和 iPad 上把语音转成文字。录音或导入音频，即可得到带时间码的完整文字，所有内容都不会离开你的设备。">
+<meta name="description" content="Slovo 用 AI 直接在你的 iPhone 和 iPad 上把语音转成文字。录音或导入音频，即可获得带标点和时间码的文字，音频和文字都不会离开你的设备。">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -190,8 +204,8 @@
     <div class="wrap">
       <div>
         <div class="tc">00:00</div>
-        <h1>语音转文字。<br><span>就在你的设备上。</span></h1>
-        <p class="sub">录音或导入音频，得到带时间码的完整文字。识别在 iPhone 本机完成，录音从不离开设备。</p>
+        <h1><span class="l1">AI 语音转文字。</span><span class="l2">数据不会离开你的设备。</span></h1>
+        <p class="sub">录音或导入音频，即可获得带标点和时间码的文字。识别在设备本机完成：无需账户，无需上传，也不需要联网。</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">在 App Store 下载</a>
           <a class="btn btn-secondary" href="./#how">看看它如何工作</a>
@@ -206,23 +220,34 @@
 
   <section class="block" id="features">
     <div class="wrap">
-      <h2>一切都在手机上完成</h2>
-      <p class="lead">Slovo 只需下载一次语音识别模型。之后，录音机、识别过程和文字都留在你的设备上，有没有网络都一样。</p>
+      <h2>一切都在你的设备上完成</h2>
+      <p class="lead">Slovo 只需下载一次语音模型。之后，录音机、神经网络和文字都留在你的设备上，有没有网络都一样。</p>
       <div class="bento">
         <div class="cell privacy">
-          <div><h3>数据不会离开你的设备</h3><p>语音识别模型在手机上运行。打开飞行模式，Slovo 照样能把你的声音变成文字。无需创建账户，中间也没有我们的服务器。</p></div>
-          <div class="facts"><span>无需账户</span><span>无广告</span><span>无上传</span></div>
+          <div><h3>默认保护隐私</h3><p>云服务会把你的录音发送到服务器。Slovo 不会：神经网络在设备本机识别语音，录音留在你身边。无需账户，无需上传，说话就好。</p></div>
+          <div class="facts"><span>无需账户</span><span>无需注册</span><span>无广告</span><span>无上传</span></div>
         </div>
         <div class="cell shot">
-          <h3>留什么，由你决定</h3><p>识别后删除音频、开关时间码、选择语音语言、同步或只留在一台设备上。</p>
-          <div class="pic"><img src="../img/zh-Hans/settings.png" data-img="settings.png" width="644" height="1302" alt="Slovo 设置：语音识别模型、润色文字、时间码、语音语言、识别后删除音频、通过 iCloud 同步"></div>
+          <h3>留什么，由你决定</h3><p>保留音频或只留文字、开关时间码、选择语音语言、同步或只留在一台设备上。</p>
+          <div class="pic"><img src="../img/zh-Hans/settings.png" data-img="settings.png" width="644" height="1302" alt="Slovo 设置：语音识别模型、时间码、语音语言、保留音频或只留文字、通过 iCloud 同步"></div>
         </div>
         <div class="cell"><div class="big">99</div><h3>种语言</h3><p>自动检测，或自己选择语言。两个模型可选：“快速”支持 25 种欧洲语言，“精准”支持 99 种语言。</p></div>
         <div class="cell"><h3>录音或导入</h3><p>应用内置录音机，或任意文件：mp3、m4a、wav、mp4。语音备忘录、聊天语音消息和视频都能通过共享菜单送进来。</p></div>
         <div class="cell"><div class="big">4 小时</div><h3>长录音</h3><p>整场会议、讲座或访谈，一次搞定。录音在后台持续进行，文字会随着你说话逐步显示。</p></div>
-        <div class="cell"><h3>润色文字</h3><p>可选的设备端语言模型会添加标点，去除口头语和重复。文字读起来像一篇文章，而不是速记稿。</p></div>
+        <div class="cell"><h3>标点和时间码</h3><p>文字自带标点。打开时间码，就能看到录音中某一刻说了什么。</p></div>
         <div class="cell"><h3>通过 iCloud 同步</h3><p>转写和音频通过你自己的 iCloud 在 iPhone、iPad 和 Mac 之间流转。也可以关掉它，让一切只留在一台设备上。</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block compare" id="compare">
+    <div class="wrap">
+      <h2>Slovo 与云端服务</h2>
+      <p class="lead">云端转写应用会把你的录音发送到服务器，在那里识别。Slovo 在设备本机识别。这就是它带来的不同。</p>
+      <table class="cmp">
+        <thead><tr><th></th><th>云端服务</th><th class="us">Slovo</th></tr></thead>
+        <tbody><tr><th>语音在哪里识别</th><td>在服务器上</td><td class="us">在你的设备上</td></tr><tr><th>音频去了哪里</th><td>发送到服务商的服务器</td><td class="us">留在你的设备上</td></tr><tr><th>谁能读到文字</th><td>服务商</td><td class="us">只有你</td></tr><tr><th>是否需要账户</th><td>需要</td><td class="us">不需要</td></tr><tr><th>是否需要联网</th><td>需要</td><td class="us">不需要</td></tr><tr><th>存储在哪里</th><td>服务商的云端</td><td class="us">你的设备和你自己的 iCloud</td></tr></tbody>
+      </table>
     </div>
   </section>
 
@@ -236,17 +261,17 @@
 
   <section class="block" id="pricing">
     <div class="wrap">
-      <h2>免费开始，需要更多时再升级 Pro</h2>
-      <p class="lead">免费版包含全部功能。Slovo Pro 只是取消识别音频时长的限制。</p>
+      <h2>免费开始</h2>
+      <p class="lead">下载即可使用，无需注册：所有功能立即可用。需要更多时，Slovo Pro 会取消识别音频时长的限制。</p>
       <div class="plans">
         <div class="plan">
           <h3>免费版</h3><div class="price">随应用附带</div>
-          <ul><li>每月 60 分钟识别时长</li><li>单个文件最长 30 分钟</li><li>全部功能：导入、润色、时间码、iCloud 同步</li></ul>
-          <p class="note">分钟数在每月 1 日恢复。</p>
+          <ul><li>第一天起就有全部功能：录音、导入、时间码、iCloud</li><li>无需账户，无需绑卡</li><li>每月一定量的免费识别</li></ul>
+          <p class="note">详情和本月剩余量会在应用内显示。</p>
         </div>
         <div class="plan pro">
           <h3>Slovo Pro</h3><div class="price">按月或按年订阅</div>
-          <ul><li>每月不限分钟数</li><li>最长 4 小时的录音和文件</li><li>同样私密的设备端识别</li></ul>
+          <ul><li>识别时长不受限制</li><li>最长 4 小时的录音和文件</li><li>同样私密的设备端识别</li></ul>
           <p class="note">以你所在地区货币计的价格在应用内显示。可随时在 App Store 设置中取消。</p>
         </div>
       </div>
@@ -255,7 +280,7 @@
 
   <section class="block closing">
     <div class="wrap">
-      <div><h2>你的话，留在你的设备上</h2><p class="lead">只需下载一次约 500 MB 的语音识别模型。之后随时随地都能用，没有信号也不例外。</p></div>
+      <div><h2>下载，然后开口说</h2><p class="lead">只需下载一次约 500 MB 的语音识别模型。之后随时随地都能用，没有信号也不例外。</p></div>
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">在 App Store 下载</a>
     </div>
   </section>

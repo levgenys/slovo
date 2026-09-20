@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Slovo</title>
-<meta name="description" content="Slovo convierte la voz en texto directamente en tu iPhone y iPad. Graba o importa audio, obtén el texto terminado con marcas de tiempo y nada sale de tu dispositivo.">
+<meta name="description" content="Slovo convierte la voz en texto con IA directamente en tu iPhone y iPad. Graba o importa audio, obtén el texto con puntuación y marcas de tiempo: el audio y el texto no salen de tu dispositivo.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -190,8 +204,8 @@
     <div class="wrap">
       <div>
         <div class="tc">00:00</div>
-        <h1>Voz a texto.<br><span>Directo en tu dispositivo.</span></h1>
-        <p class="sub">Graba o importa audio y obtén el texto con marcas de tiempo. El reconocimiento ocurre en el propio iPhone: las grabaciones nunca salen de él.</p>
+        <h1><span class="l1">De voz a texto con IA.</span><span class="l2">Los datos no salen de tu dispositivo.</span></h1>
+        <p class="sub">Graba o importa audio y obtén el texto con puntuación y marcas de tiempo. El reconocimiento se ejecuta en el propio dispositivo: sin cuenta, sin subidas, sin necesidad de internet.</p>
         <div class="actions">
           <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Descargar en el App Store</a>
           <a class="btn btn-secondary" href="./#how">Ver cómo funciona</a>
@@ -206,23 +220,34 @@
 
   <section class="block" id="features">
     <div class="wrap">
-      <h2>Todo ocurre en el teléfono</h2>
-      <p class="lead">Slovo descarga un modelo de voz una sola vez. A partir de ahí, la grabadora, el reconocimiento y el texto viven en tu dispositivo, con conexión o sin ella.</p>
+      <h2>Todo ocurre en tu dispositivo</h2>
+      <p class="lead">Slovo descarga un modelo de voz una sola vez. A partir de ahí, la grabadora, la red neuronal y el texto viven en tu dispositivo, con conexión o sin ella.</p>
       <div class="bento">
         <div class="cell privacy">
-          <div><h3>Nada sale de tu dispositivo</h3><p>El modelo de voz se ejecuta en el teléfono. Activa el modo Avión y Slovo seguirá convirtiendo tu voz en texto. No hay que crear ninguna cuenta ni hay un servidor nuestro de por medio.</p></div>
-          <div class="facts"><span>Sin cuenta</span><span>Sin publicidad</span><span>Sin subidas</span></div>
+          <div><h3>Privado por defecto</h3><p>Los servicios en la nube envían tu grabación a un servidor. Slovo no: una red neuronal reconoce la voz en el propio dispositivo, y la grabación se queda contigo. Sin cuenta, sin subir nada, solo habla.</p></div>
+          <div class="facts"><span>Sin cuenta</span><span>Sin registro</span><span>Sin publicidad</span><span>Sin subidas</span></div>
         </div>
         <div class="cell shot">
-          <h3>Tú decides qué conservar</h3><p>Elimina el audio tras el reconocimiento, activa o desactiva las marcas de tiempo, elige el idioma del habla, sincroniza o quédate en un solo dispositivo.</p>
-          <div class="pic"><img src="../img/es/settings.png" data-img="settings.png" width="644" height="1302" alt="Ajustes de Slovo: modelo de voz, limpieza del texto, marcas de tiempo, idioma del habla, eliminar el audio tras el reconocimiento, sincronizar con iCloud"></div>
+          <h3>Tú decides qué conservar</h3><p>Conserva el audio o deja solo el texto, activa o desactiva las marcas de tiempo, elige el idioma del habla, sincroniza o quédate en un solo dispositivo.</p>
+          <div class="pic"><img src="../img/es/settings.png" data-img="settings.png" width="644" height="1302" alt="Ajustes de Slovo: modelo de voz, marcas de tiempo, idioma del habla, conservar el audio o solo el texto, sincronizar con iCloud"></div>
         </div>
         <div class="cell"><div class="big">99</div><h3>Idiomas</h3><p>Detección automática, o elige tú el idioma. Dos modelos para escoger: uno rápido para 25 idiomas europeos y el más preciso para 99.</p></div>
         <div class="cell"><h3>Graba o importa</h3><p>Una grabadora dentro de la app, o cualquier archivo: mp3, m4a, wav, mp4. Las notas de voz, los mensajes de voz de los chats y los vídeos llegan a través del menú Compartir.</p></div>
         <div class="cell"><div class="big">4 h</div><h3>Grabaciones largas</h3><p>Una reunión, una clase o una entrevista entera de una sola vez. La grabación continúa en segundo plano y el texto va apareciendo mientras hablas.</p></div>
-        <div class="cell"><h3>Limpiar el texto</h3><p>Un modelo de lenguaje opcional, que se ejecuta en el dispositivo, añade la puntuación y quita muletillas y repeticiones. El texto se lee como un artículo, no como una transcripción literal.</p></div>
+        <div class="cell"><h3>Puntuación y marcas de tiempo</h3><p>El texto llega con puntuación. Activa las marcas de tiempo para ver en qué momento de la grabación se dijo algo.</p></div>
         <div class="cell"><h3>Sincronizar con iCloud</h3><p>Las transcripciones y el audio pasan entre tu iPhone, iPad y Mac a través de tu propio iCloud. O desactívalo y guarda todo en un solo dispositivo.</p></div>
       </div>
+    </div>
+  </section>
+
+  <section class="block compare" id="compare">
+    <div class="wrap">
+      <h2>Slovo y los servicios en la nube</h2>
+      <p class="lead">Las apps de transcripción en la nube envían tu grabación a un servidor y la reconocen allí. Slovo la reconoce en el propio dispositivo. Esto es lo que cambia.</p>
+      <table class="cmp">
+        <thead><tr><th></th><th>Servicio en la nube</th><th class="us">Slovo</th></tr></thead>
+        <tbody><tr><th>Dónde se reconoce la voz</th><td>En un servidor</td><td class="us">En tu dispositivo</td></tr><tr><th>A dónde va el audio</th><td>Al servidor del servicio</td><td class="us">Se queda en tu dispositivo</td></tr><tr><th>Quién puede leer el texto</th><td>El servicio</td><td class="us">Solo tú</td></tr><tr><th>Necesita cuenta</th><td>Sí</td><td class="us">No</td></tr><tr><th>Necesita internet</th><td>Sí</td><td class="us">No</td></tr><tr><th>Dónde se guarda</th><td>En la nube del servicio</td><td class="us">En tu dispositivo y en tu propio iCloud</td></tr></tbody>
+      </table>
     </div>
   </section>
 
@@ -236,17 +261,17 @@
 
   <section class="block" id="pricing">
     <div class="wrap">
-      <h2>Gratis para empezar, Pro cuando necesites más</h2>
-      <p class="lead">Todas las funciones están incluidas en el plan gratuito. Slovo Pro solo quita los límites a la cantidad de audio que se reconoce.</p>
+      <h2>Empieza gratis</h2>
+      <p class="lead">Descárgala y úsala sin registrarte: todas las funciones están disponibles desde el primer momento. Cuando necesites más, Slovo Pro quita los límites de cuánto audio se reconoce.</p>
       <div class="plans">
         <div class="plan">
           <h3>Gratis</h3><div class="price">Incluido con la app</div>
-          <ul><li>60 minutos de reconocimiento al mes</li><li>Hasta 30 minutos por archivo</li><li>Todas las funciones: importación, limpieza, marcas de tiempo, sincronización con iCloud</li></ul>
-          <p class="note">Los minutos se renuevan el día 1 de cada mes.</p>
+          <ul><li>Todas las funciones desde el primer día: grabación, importación, marcas de tiempo, iCloud</li><li>Sin cuenta, sin tarjeta</li><li>Una cantidad gratuita de reconocimiento cada mes</li></ul>
+          <p class="note">Los detalles y lo que queda este mes se muestran en la app.</p>
         </div>
         <div class="plan pro">
           <h3>Slovo Pro</h3><div class="price">Suscripción mensual o anual</div>
-          <ul><li>Minutos ilimitados, todos los meses</li><li>Grabaciones y archivos de hasta 4 horas</li><li>El mismo reconocimiento privado, en el dispositivo</li></ul>
+          <ul><li>Reconocimiento sin límite de minutos</li><li>Grabaciones y archivos de hasta 4 horas</li><li>El mismo reconocimiento privado, en el dispositivo</li></ul>
           <p class="note">Los precios en tu moneda se muestran en la app. Cancela cuando quieras desde los ajustes de tu App Store.</p>
         </div>
       </div>
@@ -255,7 +280,7 @@
 
   <section class="block closing">
     <div class="wrap">
-      <div><h2>Tus palabras, tu dispositivo</h2><p class="lead">Una sola descarga de unos 500 MB para el modelo de voz. Después funciona en cualquier parte, incluso sin cobertura.</p></div>
+      <div><h2>Descárgala y habla</h2><p class="lead">Una sola descarga de unos 500 MB para el modelo de voz. Después funciona en cualquier parte, incluso sin cobertura.</p></div>
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6812518848">Descargar en el App Store</a>
     </div>
   </section>

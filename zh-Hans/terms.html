@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>使用条款 · Slovo</title>
-<meta name="description" content="Slovo 直接在你的 iPhone 和 iPad 上把语音转成文字。录音或导入音频，即可得到带时间码的完整文字，所有内容都不会离开你的设备。">
+<meta name="description" content="Slovo 用 AI 直接在你的 iPhone 和 iPad 上把语音转成文字。录音或导入音频，即可获得带标点和时间码的文字，音频和文字都不会离开你的设备。">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -196,7 +210,7 @@
 <h2>免费版与 Slovo Pro</h2><p>免费版每个自然月最多识别 60 分钟音频，单个文件最长 30 分钟；分钟数在每月 1 日重置。Slovo Pro 是自动续订的订阅，可按月或按年购买，它取消上述限制，并允许最长 4 小时的录音和文件。</p>
 <ul><li>确认购买时，费用将通过你的 Apple 账户扣取。</li><li>除非你在当前周期结束前至少 24 小时取消，订阅将自动续订。续订费用会在周期结束前 24 小时内从你的账户扣取。</li><li>你可以在 App Store 账户设置中管理或取消订阅。取消后，Pro 会一直保持有效，直到已付费周期结束。</li><li>如果提供免费试用，购买订阅时，试用期未使用的部分将作废。</li><li>价格因国家或地区而异，购买前会在应用内显示。退款由 Apple 按 App Store 规则处理。</li><li>在新设备上，使用应用中的“恢复购买”即可把现有订阅转过来。</li></ul>
 <p>在应用的未来版本中，我们可能会调整免费版和 Slovo Pro 所包含的内容。这类调整不会缩短你已经付费的周期。</p>
-<h2>模型与第三方软件</h2><p>识别和文字润色使用在你设备上本地运行的开源模型：OpenAI 的 Whisper、NVIDIA 的 Parakeet 和 Alibaba Cloud 的 Qwen，各自适用其自身的许可。模型文件从 Hugging Face 下载。在未来版本中，我们可能会添加、替换或停用某些模型；已在你设备上的模型会一直可用，直到你将其删除。</p>
+<h2>模型与第三方软件</h2><p>识别使用在你设备上本地运行的开放语音模型，每个模型都有各自的许可协议。应用包含的模型和第三方软件及其许可协议，列在 <a href="../licenses.html">Licenses</a> 页面（英文）。在未来版本中，我们可能会添加、替换或停用某些模型；已在你设备上的模型会一直可用，直到你将其删除。</p>
 <h2>你的数据</h2><p>你在 Slovo 中创建的一切都存储在你的设备上；如果开启同步，还会存储在你自己的 iCloud 中。我们不保留任何副本，也无法为你恢复。如果这些转写对你很重要，请备份你的设备。我们的<a href="privacy.html">隐私政策</a>说明了应用如何处理数据。</p>
 <h2>无担保</h2><p>本应用按“现状”提供。在法律允许的范围内，我们不对其准确性、可用性或对特定用途的适用性作任何担保，也不对因使用本应用或识别文字中的错误而造成的损失承担责任。</p>
 <h2>本条款的变更</h2><p>随着应用的更新，我们可能会修改本条款。页首的日期显示当前版本。更新后继续使用应用，即表示你接受新的条款。</p>

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Support · Slovo</title>
-<meta name="description" content="Slovo macht aus Sprache Text, direkt auf deinem iPhone und iPad. Nimm Audio auf oder importiere es, bekomme fertigen Text mit Zeitmarken, und nichts verlässt dein Gerät.">
+<meta name="description" content="Slovo macht mit KI aus Sprache Text, direkt auf deinem iPhone und iPad. Nimm Audio auf oder importiere es, bekomme Text mit Satzzeichen und Zeitmarken, und Audio und Text verlassen nie dein Gerät.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -191,8 +205,8 @@
 <p class="intro">Etwas funktioniert nicht, oder du hast eine Idee für Slovo? Schreib uns. Eine Nachricht aus dem Bereich „Hilfe“ in den Einstellungen der App kommt schon mit Version und Gerät ausgefüllt bei uns an.</p>
 <div class="card"><p><a class="btn btn-primary" href="mailto:levgenys11@gmail.com?subject=Slovo%3A%20Frage">Schreib an levgenys11@gmail.com</a></p><p class="hint">Wir antworten innerhalb weniger Tage. Nenne die App-Version, dein Gerät und was du erwartet hättest.</p></div>
 <h2>Häufige Fragen</h2>
-<div class="faq"><details><summary>Braucht Slovo Internet?</summary><p>Nur einmal, um das Sprachmodell herunterzuladen. Danach funktionieren Aufnahme, Erkennung und Textbereinigung komplett offline. iCloud-Synchronisierung und Abos brauchen natürlich eine Verbindung.</p></details><details><summary>Wie schicke ich ein Sprachmemo oder ein Video an Slovo?</summary><p>Öffne die Aufnahme in Sprachmemos, Fotos, Dateien oder einem Chat, tippe auf „Teilen“ und wähle Slovo. Beim ersten Mal ist Slovo vielleicht noch nicht in der App-Reihe:</p>
-<ol><li>Streiche die App-Reihe nach links und tippe auf „Mehr“.</li><li>Tippe oben rechts auf „Bearbeiten“.</li><li>Schalte Slovo ein und tippe auf das grüne Plus, um es zu den Favoriten hinzuzufügen.</li><li>Ziehe Slovo nach oben, damit es die erste App im Teilen-Menü ist.</li></ol></details><details><summary>Welches Spracherkennungsmodell soll ich wählen?</summary><p>Slovo empfiehlt eins für dein Gerät und deine Sprache. „Schnell“ versteht 25 europäische Sprachen und ist das flotteste. „Genau“ versteht 99 Sprachen und kommt mit schwierigem Audio besser zurecht. Geräte mit weniger Arbeitsspeicher bekommen ein einzelnes Modell „Standard“. Wechseln kannst du in den Einstellungen unter „Spracherkennungsmodell“.</p></details><details><summary>Der Text hat Fehler. Was kann ich tun?</summary><p>Stelle die Sprache der Aufnahme bei kurzen oder fachbegrifflastigen Aufnahmen manuell ein statt „Auto“. Probiere das Modell „Genau“. Schalte „Text bereinigen“ ein für Satzzeichen und weniger Füllwörter. Und halte das Mikrofon nah dran: Die Aufnahmequalität zählt mehr als alles andere.</p></details><details><summary>Wo werden meine Aufnahmen und Transkripte gespeichert?</summary><p>Auf deinem Gerät, im Speicher der App. Mit eingeschaltetem „Über iCloud synchronisieren“ liegen sie zusätzlich in deiner iCloud und sind auf deinen anderen Geräten verfügbar. Der Bildschirm „Speicher“ in den Einstellungen zeigt, wie viel Platz die App belegt. „Audio nach der Erkennung löschen“ behält nur den Text.</p></details><details><summary>Wie lösche ich meine Daten?</summary><p>Streiche im Verlauf über ein Transkript, um es zu löschen, oder öffne es und lösche nur das Audio, während der Text bleibt. Über den Bildschirm „Speicher“ kannst du alles auf einmal leeren. Wenn du die App löschst, sind alle lokalen Daten weg; iCloud-Daten entfernst du in den iOS-Einstellungen unter deinem Apple-Account, iCloud, „Speicher verwalten“.</p></details><details><summary>Wie kündige ich Slovo Pro oder stelle es wieder her?</summary><p>Abos verwaltet Apple: Öffne die iOS-Einstellungen, tippe auf deinen Namen, dann auf „Abonnements“ und wähle Slovo. Pro bleibt bis zum Ende des bezahlten Zeitraums aktiv. Auf einem neuen Gerät öffnest du Slovo Pro in den Einstellungen der App und tippst auf „Käufe wiederherstellen“.</p></details><details><summary>Welche Geräte werden unterstützt?</summary><p>iPhone und iPad ab iOS 18 sowie Macs mit Apple Silicon, auf denen Slovo als iPad-App läuft. Die genauesten Modelle brauchen ein Gerät mit mindestens 6 GB Arbeitsspeicher; andere Geräte bekommen das Modell „Standard“.</p></details></div>
+<div class="faq"><details><summary>Braucht Slovo Internet?</summary><p>Nur einmal, um das Sprachmodell herunterzuladen. Danach funktionieren Aufnahme und Erkennung komplett offline. iCloud-Synchronisierung und Abos brauchen natürlich eine Verbindung.</p></details><details><summary>Wie schicke ich ein Sprachmemo oder ein Video an Slovo?</summary><p>Öffne die Aufnahme in Sprachmemos, Fotos, Dateien oder einem Chat, tippe auf „Teilen“ und wähle Slovo. Beim ersten Mal ist Slovo vielleicht noch nicht in der App-Reihe:</p>
+<ol><li>Streiche die App-Reihe nach links und tippe auf „Mehr“.</li><li>Tippe oben rechts auf „Bearbeiten“.</li><li>Schalte Slovo ein und tippe auf das grüne Plus, um es zu den Favoriten hinzuzufügen.</li><li>Ziehe Slovo nach oben, damit es die erste App im Teilen-Menü ist.</li></ol></details><details><summary>Welches Spracherkennungsmodell soll ich wählen?</summary><p>Slovo empfiehlt eins für dein Gerät und deine Sprache. „Schnell“ versteht 25 europäische Sprachen und ist das flotteste. „Genau“ versteht 99 Sprachen und kommt mit schwierigem Audio besser zurecht. Geräte mit weniger Arbeitsspeicher bekommen ein einzelnes Modell „Standard“. Wechseln kannst du in den Einstellungen unter „Spracherkennungsmodell“.</p></details><details><summary>Der Text hat Fehler. Was kann ich tun?</summary><p>Stelle die Sprache der Aufnahme bei kurzen oder fachbegrifflastigen Aufnahmen manuell ein statt „Auto“. Probiere das Modell „Genau“. Und halte das Mikrofon nah dran: Die Aufnahmequalität zählt mehr als alles andere.</p></details><details><summary>Wo werden meine Aufnahmen und Transkripte gespeichert?</summary><p>Auf deinem Gerät, im Speicher der App. Mit eingeschaltetem „Über iCloud synchronisieren“ liegen sie zusätzlich in deiner iCloud und sind auf deinen anderen Geräten verfügbar. Der Bildschirm „Speicher“ in den Einstellungen zeigt, wie viel Platz die App belegt. In den Einstellungen legst du fest, ob das Audio bleibt oder nur der Text.</p></details><details><summary>Wie lösche ich meine Daten?</summary><p>Streiche im Verlauf über ein Transkript, um es zu löschen, oder öffne es und lösche nur das Audio, während der Text bleibt. Über den Bildschirm „Speicher“ kannst du alles auf einmal leeren. Wenn du die App löschst, sind alle lokalen Daten weg; iCloud-Daten entfernst du in den iOS-Einstellungen unter deinem Apple-Account, iCloud, „Speicher verwalten“.</p></details><details><summary>Wie kündige ich Slovo Pro oder stelle es wieder her?</summary><p>Abos verwaltet Apple: Öffne die iOS-Einstellungen, tippe auf deinen Namen, dann auf „Abonnements“ und wähle Slovo. Pro bleibt bis zum Ende des bezahlten Zeitraums aktiv. Auf einem neuen Gerät öffnest du Slovo Pro in den Einstellungen der App und tippst auf „Käufe wiederherstellen“.</p></details><details><summary>Welche Geräte werden unterstützt?</summary><p>iPhone und iPad ab iOS 18 sowie Macs mit Apple Silicon, auf denen Slovo als iPad-App läuft. Die genauesten Modelle brauchen ein Gerät mit mindestens 6 GB Arbeitsspeicher; andere Geräte bekommen das Modell „Standard“.</p></details></div>
 </div></main><footer>
   <div class="wrap">
     <div>© <span class="mono">2026</span> Slovo</div>

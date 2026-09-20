@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>개인정보 처리방침 · Slovo</title>
-<meta name="description" content="Slovo는 iPhone과 iPad에서 바로 음성을 텍스트로 바꿉니다. 녹음하거나 오디오를 가져오면 타임코드가 붙은 완성된 텍스트를 얻을 수 있고, 어떤 것도 기기 밖으로 나가지 않습니다.">
+<meta name="description" content="Slovo는 AI로 iPhone과 iPad에서 바로 음성을 텍스트로 바꿉니다. 녹음하거나 오디오를 가져오면 문장 부호와 타임코드가 붙은 텍스트를 얻을 수 있고, 오디오와 텍스트는 기기 밖으로 나가지 않습니다.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -191,7 +205,7 @@
 <div class="updated">최종 업데이트: 2026년 9월 17일</div>
 <p class="intro">Slovo는 기기에서 음성을 텍스트로 바꿉니다. 계정도, 자체 서버도 없기 때문에 알려 드릴 내용이 아주 적습니다. 그 전부를 여기에 적었습니다.</p>
 <h2>요약</h2><ul><li>녹음, 가져온 파일, 받아쓰기는 사용자의 기기에서 처리되고 저장됩니다.</li><li>저희는 개인정보를 수집하지 않습니다. 앱은 녹음이 이루어졌다거나 구독 화면이 표시되었다는 것과 같은 익명의 사용 통계를 Google Firebase Analytics로 전송합니다. 사용자의 녹음, 텍스트, 연락처 정보는 절대 전송하지 않습니다.</li><li>iCloud 동기화는 선택 사항이며 사용자 본인의 Apple 계정을 통해 이루어집니다. 저희는 그 데이터를 볼 수 없습니다.</li><li>앱이 보내는 네트워크 요청은 한 번뿐인 모델 다운로드, 선택 사항인 iCloud 동기화, App Store 구입, 무료 플랜을 위한 날짜 확인, 그리고 아래에서 설명하는 익명의 사용 통계가 전부입니다.</li></ul>
-<h2>기기에 남는 것</h2><p>Slovo는 사용자가 마이크 접근을 허용한 뒤, 녹음하는 동안에만 마이크로 오디오를 녹음합니다. 녹음, 가져온 파일, 인식된 텍스트, 사용자가 입력한 화자 이름, 설정은 기기 안 앱의 비공개 저장 공간에 보관됩니다. 음성 인식과 텍스트 다듬기는 한 번 다운로드해 기기에 저장된 모델로 기기에서 실행됩니다.</p>
+<h2>기기에 남는 것</h2><p>Slovo는 사용자가 마이크 접근을 허용한 뒤, 녹음하는 동안에만 마이크로 오디오를 녹음합니다. 녹음, 가져온 파일, 인식된 텍스트, 사용자가 입력한 화자 이름, 설정은 기기 안 앱의 비공개 저장 공간에 보관됩니다. 음성 인식은 한 번 다운로드해 기기에 저장된 모델로 기기에서 실행됩니다.</p>
 <p>공유 시트를 통해 Slovo로 보낸 파일은 앱이 열 수 있도록 같은 기기 안 앱의 저장 공간으로 복사됩니다.</p>
 <h2>iCloud 동기화</h2><p>"iCloud로 동기화"를 켜 두면 받아쓰기는 사용자의 비공개 iCloud 데이터베이스에, 오디오 파일은 iCloud Drive 안 앱 폴더에 저장됩니다. 이 데이터는 사용자의 Apple 계정에 연결되어 있고 Apple이 암호화하며, 사용자 본인과 해당 계정으로 로그인한 기기에서만 접근할 수 있습니다. 저희는 접근할 수 없습니다. 모든 것을 한 기기에만 두려면 설정을 끄세요. iCloud 쪽에는 Apple의 iCloud 약관과 개인정보 처리방침이 적용됩니다.</p>
 <h2>모델 다운로드</h2><p>Slovo를 처음 설정할 때, 그리고 다른 모델을 선택할 때마다 앱은 Hugging Face(huggingface.co)에서 모델 파일을 다운로드합니다. 여느 다운로드와 마찬가지로 이 요청은 파일을 제공하는 서버에 사용자의 IP 주소를 드러냅니다. 사용자나 녹음, 텍스트에 관한 어떤 정보도 함께 전송되지 않으며, 저희가 그로부터 받는 것도 없습니다.</p>

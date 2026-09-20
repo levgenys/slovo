@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>지원 · Slovo</title>
-<meta name="description" content="Slovo는 iPhone과 iPad에서 바로 음성을 텍스트로 바꿉니다. 녹음하거나 오디오를 가져오면 타임코드가 붙은 완성된 텍스트를 얻을 수 있고, 어떤 것도 기기 밖으로 나가지 않습니다.">
+<meta name="description" content="Slovo는 AI로 iPhone과 iPad에서 바로 음성을 텍스트로 바꿉니다. 녹음하거나 오디오를 가져오면 문장 부호와 타임코드가 붙은 텍스트를 얻을 수 있고, 오디오와 텍스트는 기기 밖으로 나가지 않습니다.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -191,8 +205,8 @@
 <p class="intro">무언가 작동하지 않거나 Slovo에 대한 아이디어가 있으신가요? 메일을 보내 주세요. 앱 설정의 도움말에서 보내는 메일에는 버전과 기기 정보가 미리 채워져 있습니다.</p>
 <div class="card"><p><a class="btn btn-primary" href="mailto:levgenys11@gmail.com?subject=Slovo%3A%20문의">levgenys11@gmail.com으로 메일 보내기</a></p><p class="hint">며칠 안에 답장드립니다. 앱 버전, 기기, 그리고 어떤 결과를 기대했는지 알려 주세요.</p></div>
 <h2>자주 묻는 질문</h2>
-<div class="faq"><details><summary>Slovo를 쓰려면 인터넷이 필요한가요?</summary><p>음성 인식 모델을 다운로드할 때 한 번만 필요합니다. 그다음에는 녹음, 인식, 텍스트 다듬기가 모두 오프라인으로 작동합니다. iCloud 동기화와 구독은 당연히 연결이 필요합니다.</p></details><details><summary>음성 메모나 동영상을 Slovo로 보내려면 어떻게 하나요?</summary><p>음성 메모, 사진, 파일 또는 채팅 앱에서 녹음을 열고 공유를 탭한 뒤 Slovo를 선택하세요. 처음에는 앱 목록에 Slovo가 아직 없을 수 있습니다:</p>
-<ol><li>앱 행을 왼쪽으로 쓸어넘기고 더 보기를 탭하세요.</li><li>오른쪽 상단의 편집을 탭하세요.</li><li>Slovo를 켜고 초록색 더하기를 탭해 즐겨찾기에 추가하세요.</li><li>Slovo를 맨 위로 끌어올려 공유 시트의 첫 번째 앱으로 만드세요.</li></ol></details><details><summary>어떤 음성 인식 모델을 골라야 하나요?</summary><p>Slovo가 기기와 언어에 맞는 모델을 추천합니다. "빠름"은 유럽 25개 언어를 이해하며 가장 빠릅니다. "정확"은 99개 언어를 이해하고 까다로운 오디오를 더 잘 처리합니다. 메모리가 적은 기기에는 "표준" 모델 하나가 제공됩니다. 설정의 음성 인식 모델에서 바꿀 수 있습니다.</p></details><details><summary>텍스트에 오류가 있어요. 어떻게 해야 하나요?</summary><p>짧은 녹음이나 전문 용어가 많은 녹음이라면 "자동" 대신 음성 언어를 직접 지정하세요. "정확" 모델을 써 보세요. "텍스트 다듬기"를 켜면 문장 부호가 들어가고 군더더기 말이 줄어듭니다. 그리고 마이크를 가까이 두세요. 녹음 품질이 무엇보다 중요합니다.</p></details><details><summary>녹음과 받아쓰기는 어디에 저장되나요?</summary><p>기기 안 앱의 저장 공간에 저장됩니다. "iCloud로 동기화"를 켜면 iCloud에도 저장되어 다른 기기에서도 쓸 수 있습니다. 설정의 저장 공간 화면에서 앱이 차지하는 용량을 볼 수 있습니다. "인식 후 오디오 삭제"를 켜면 텍스트만 남깁니다.</p></details><details><summary>내 데이터를 삭제하려면 어떻게 하나요?</summary><p>기록에서 받아쓰기를 쓸어넘겨 삭제하거나, 열어서 텍스트는 남기고 오디오만 삭제할 수 있습니다. 저장 공간 화면에서는 모든 것을 한 번에 비울 수 있습니다. 앱을 삭제하면 로컬 데이터가 모두 지워집니다. iCloud 데이터는 iOS 설정의 Apple 계정, iCloud, 저장 공간 관리에서 지울 수 있습니다.</p></details><details><summary>Slovo Pro를 취소하거나 복원하려면 어떻게 하나요?</summary><p>구독은 Apple이 관리합니다. iOS 설정을 열고 내 이름을 탭한 뒤 구독으로 들어가 Slovo를 선택하세요. Pro는 결제한 기간이 끝날 때까지 유지됩니다. 새 기기에서는 앱 설정에서 Slovo Pro를 열고 "구입 항목 복원"을 탭하세요.</p></details><details><summary>어떤 기기를 지원하나요?</summary><p>iOS 18 이상의 iPhone과 iPad, 그리고 Slovo가 iPad 앱으로 실행되는 Apple silicon Mac입니다. 가장 정확한 모델은 메모리가 6 GB 이상인 기기가 필요하며, 그 외 기기에는 표준 모델이 제공됩니다.</p></details></div>
+<div class="faq"><details><summary>Slovo를 쓰려면 인터넷이 필요한가요?</summary><p>음성 모델을 다운로드할 때 한 번만 필요합니다. 그다음에는 녹음과 인식이 오프라인으로 작동합니다. iCloud 동기화와 구독은 당연히 연결이 필요합니다.</p></details><details><summary>음성 메모나 동영상을 Slovo로 보내려면 어떻게 하나요?</summary><p>음성 메모, 사진, 파일 또는 채팅 앱에서 녹음을 열고 공유를 탭한 뒤 Slovo를 선택하세요. 처음에는 앱 목록에 Slovo가 아직 없을 수 있습니다:</p>
+<ol><li>앱 행을 왼쪽으로 쓸어넘기고 더 보기를 탭하세요.</li><li>오른쪽 상단의 편집을 탭하세요.</li><li>Slovo를 켜고 초록색 더하기를 탭해 즐겨찾기에 추가하세요.</li><li>Slovo를 맨 위로 끌어올려 공유 시트의 첫 번째 앱으로 만드세요.</li></ol></details><details><summary>어떤 음성 인식 모델을 골라야 하나요?</summary><p>Slovo가 기기와 언어에 맞는 모델을 추천합니다. "빠름"은 유럽 25개 언어를 이해하며 가장 빠릅니다. "정확"은 99개 언어를 이해하고 까다로운 오디오를 더 잘 처리합니다. 메모리가 적은 기기에는 "표준" 모델 하나가 제공됩니다. 설정의 음성 인식 모델에서 바꿀 수 있습니다.</p></details><details><summary>텍스트에 오류가 있어요. 어떻게 해야 하나요?</summary><p>짧은 녹음이나 전문 용어가 많은 녹음이라면 "자동" 대신 음성 언어를 직접 지정하세요. "정확" 모델을 써 보세요. 그리고 마이크를 가까이 두세요. 녹음 품질이 무엇보다 중요합니다.</p></details><details><summary>녹음과 받아쓰기는 어디에 저장되나요?</summary><p>기기 안 앱의 저장 공간에 저장됩니다. "iCloud로 동기화"를 켜면 iCloud에도 저장되어 다른 기기에서도 쓸 수 있습니다. 설정의 저장 공간 화면에서 앱이 차지하는 용량을 볼 수 있습니다. 설정에서 오디오를 남길지 텍스트만 남길지 선택할 수 있습니다.</p></details><details><summary>내 데이터를 삭제하려면 어떻게 하나요?</summary><p>기록에서 받아쓰기를 쓸어넘겨 삭제하거나, 열어서 텍스트는 남기고 오디오만 삭제할 수 있습니다. 저장 공간 화면에서는 모든 것을 한 번에 비울 수 있습니다. 앱을 삭제하면 로컬 데이터가 모두 지워집니다. iCloud 데이터는 iOS 설정의 Apple 계정, iCloud, 저장 공간 관리에서 지울 수 있습니다.</p></details><details><summary>Slovo Pro를 취소하거나 복원하려면 어떻게 하나요?</summary><p>구독은 Apple이 관리합니다. iOS 설정을 열고 내 이름을 탭한 뒤 구독으로 들어가 Slovo를 선택하세요. Pro는 결제한 기간이 끝날 때까지 유지됩니다. 새 기기에서는 앱 설정에서 Slovo Pro를 열고 "구입 항목 복원"을 탭하세요.</p></details><details><summary>어떤 기기를 지원하나요?</summary><p>iOS 18 이상의 iPhone과 iPad, 그리고 Slovo가 iPad 앱으로 실행되는 Apple silicon Mac입니다. 가장 정확한 모델은 메모리가 6 GB 이상인 기기가 필요하며, 그 외 기기에는 표준 모델이 제공됩니다.</p></details></div>
 </div></main><footer>
   <div class="wrap">
     <div>© <span class="mono">2026</span> Slovo</div>

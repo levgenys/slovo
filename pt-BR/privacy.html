@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Política de Privacidade · Slovo</title>
-<meta name="description" content="O Slovo transforma fala em texto direto no seu iPhone e iPad. Grave ou importe um áudio, receba o texto pronto com marcas de tempo, e nada sai do seu dispositivo.">
+<meta name="description" content="O Slovo transforma fala em texto com IA direto no seu iPhone e iPad. Grave ou importe um áudio, receba o texto com pontuação e marcas de tempo, e o áudio e o texto nunca saem do seu dispositivo.">
 <meta name="theme-color" content="#1E6F5C">
 <link rel="icon" href="../img/icon.png">
 <link rel="apple-touch-icon" href="../img/icon.png">
@@ -80,10 +80,13 @@
   .lead { color: var(--ink2); font-size: 17px; max-width: 58ch; margin-top: 14px; }
 
   .hero { padding-block: clamp(40px, 6vw, 80px) clamp(48px, 7vw, 96px); }
-  .hero .wrap { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: clamp(32px, 6vw, 80px); align-items: center; }
+  .hero .wrap { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: clamp(32px, 6vw, 80px); align-items: center; }
   .tc { font-family: var(--mono); font-size: 14px; color: var(--accent); font-weight: 500; letter-spacing: 0.02em; }
-  .hero h1 { font-size: clamp(36px, 5.4vw, 60px); font-weight: 600; margin-top: 12px; }
-  .hero h1 span { color: var(--ink2); font-weight: 500; }
+  .hero h1 { font-size: clamp(30px, 4vw, 52px); font-weight: 600; margin-top: 12px; }
+  .hero h1 .l1 { white-space: nowrap; }
+  .hero h1 .l2 { display: block; margin-top: 8px; font-size: 0.62em; font-weight: 500; line-height: 1.22; color: var(--ink); white-space: nowrap; }
+  @media (max-width: 560px) { .hero h1 .l2 { white-space: normal; } }
+  @media (max-width: 560px) { .hero h1 .l2 br { display: none; } }
   .hero p.sub { margin-top: 20px; font-size: 18px; color: var(--ink2); max-width: 46ch; }
   .hero .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 32px; }
   .hero .req { margin-top: 18px; font-size: 14px; color: var(--ink2); }
@@ -98,7 +101,7 @@
   .cell p { color: var(--ink2); font-size: 15.5px; }
   .cell .big { font-family: var(--mono); font-size: clamp(44px, 5vw, 56px); font-weight: 500; line-height: 1; color: var(--accent); letter-spacing: -0.03em; }
   .cell.privacy { grid-column: span 2; background: var(--accent); color: var(--accent-ink); justify-content: space-between; }
-  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); max-width: 16ch; }
+  .cell.privacy h3 { font-size: clamp(24px, 3vw, 30px); }
   .cell.privacy p { color: var(--accent-ink); opacity: 0.86; max-width: 48ch; font-size: 16px; }
   .cell.privacy .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; font-family: var(--mono); font-size: 13px; opacity: 0.9; margin-top: 14px; }
   .cell.shot { grid-row: span 2; padding-bottom: 0; overflow: hidden; }
@@ -111,6 +114,15 @@
     .cell.shot .pic { max-height: 360px; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
+
+  .cmp { width: 100%; margin-top: 40px; border-collapse: separate; border-spacing: 0; background: var(--surface); border-radius: 22px; box-shadow: var(--shadow); overflow: hidden; font-size: 15.5px; }
+  .cmp th, .cmp td { padding: 16px 22px; text-align: left; vertical-align: top; border-top: 1px solid var(--line); }
+  .cmp thead th { border-top: 0; font-family: var(--mono); font-size: 13px; font-weight: 500; color: var(--ink2); letter-spacing: 0.02em; }
+  .cmp tbody th { font-weight: 500; color: var(--ink2); width: 32%; }
+  .cmp td { color: var(--ink2); }
+  .cmp .us { color: var(--accent); font-weight: 600; background: var(--accent-soft); }
+  .cmp thead .us { color: var(--accent); }
+  @media (max-width: 560px) { .cmp th, .cmp td { padding: 12px 14px; font-size: 14px; } .cmp tbody th { width: auto; } }
 
   .steps { list-style: none; margin: 40px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; counter-reset: step; }
   .steps li { border-top: 2px solid var(--accent); padding-top: 18px; counter-increment: step; }
@@ -165,6 +177,8 @@
   details p, details ol { color: var(--ink2); margin: 0 0 16px; max-width: 64ch; }
   details ol { padding-left: 22px; }
   details li { margin-top: 6px; }
+  .lic { margin-top: 28px; font-size: 14.5px; }
+  .lic th, .lic td { padding: 12px 16px; }
   .faq { margin-top: 28px; }
   [hidden] { display: none !important; }
   :lang(ko) h1, :lang(ko) h2, :lang(ko) h3, :lang(ko) summary { word-break: keep-all; }
@@ -191,7 +205,7 @@
 <div class="updated">Última atualização em 17 de setembro de 2026</div>
 <p class="intro">O Slovo transforma fala em texto no seu dispositivo. Não tem contas e não tem servidores próprios, então há muito pouco a dizer. Aqui está tudo.</p>
 <h2>A versão curta</h2><ul><li>Gravações, arquivos importados e transcrições são processados e armazenados no seu dispositivo.</li><li>Não coletamos dados pessoais. O app envia estatísticas de uso anônimas para o Google Firebase Analytics, como o fato de que uma gravação foi feita ou que a tela de assinatura foi exibida; ele nunca envia suas gravações, seu texto ou seus dados de contato.</li><li>A sincronização pelo iCloud é opcional e passa pela sua própria conta Apple. Não conseguimos ver esses dados.</li><li>As únicas solicitações de rede que o app faz são o download único do modelo, a sincronização opcional pelo iCloud, as compras na App Store, uma verificação de data para o plano gratuito e as estatísticas de uso anônimas descritas abaixo.</li></ul>
-<h2>O que fica no seu dispositivo</h2><p>O Slovo grava áudio pelo microfone somente enquanto você está gravando, e somente depois que você permite o acesso ao microfone. Gravações, arquivos que você importa, o texto reconhecido, os nomes de falantes que você digita e seus ajustes ficam no armazenamento privado do app, no dispositivo. O reconhecimento de fala e a limpeza do texto rodam no dispositivo com modelos que são baixados uma vez e guardados localmente.</p>
+<h2>O que fica no seu dispositivo</h2><p>O Slovo grava áudio pelo microfone somente enquanto você está gravando, e somente depois que você permite o acesso ao microfone. Gravações, arquivos que você importa, o texto reconhecido, os nomes de falantes que você digita e seus ajustes ficam no armazenamento privado do app, no dispositivo. O reconhecimento de fala roda no dispositivo com modelos que são baixados uma vez e guardados localmente.</p>
 <p>Os arquivos que você envia ao Slovo pelo menu Compartilhar são copiados para o armazenamento do app no mesmo dispositivo, para que o app consiga abri-los.</p>
 <h2>Sincronização pelo iCloud</h2><p>Se você deixar "Sincronizar pelo iCloud" ligado, as transcrições ficam no seu banco de dados privado do iCloud, e os arquivos de áudio, na pasta do app no seu iCloud Drive. Esses dados estão vinculados à sua Conta Apple, são criptografados pela Apple e ficam disponíveis apenas para você e para os dispositivos conectados com essa conta. Não temos acesso a eles. Desligue o ajuste para manter tudo em um só dispositivo; os termos e a política de privacidade do iCloud da Apple regem a parte do iCloud.</p>
 <h2>Download dos modelos</h2><p>Na primeira vez que você configura o Slovo, e sempre que escolhe outro modelo, o app baixa os arquivos do modelo do Hugging Face (huggingface.co). Como em qualquer download, essa solicitação revela seu endereço IP ao servidor que entrega os arquivos. Nada sobre você, suas gravações ou seu texto é enviado junto, e nós não recebemos nada disso.</p>
