@@ -73,6 +73,9 @@
   nav .cta { flex: none; color: var(--accent-ink); background: var(--accent); padding: 8px 14px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
   nav .cta:hover { color: var(--accent-ink); filter: brightness(1.08); }
   @media (max-width: 640px) { nav .hide-sm { display: none; } }
+  /* Safari page zoom narrows the CSS viewport, so these also catch an enlarged font. */
+  @media (max-width: 420px) { .top .wrap { gap: 10px; } .langbox select { font-size: 13px; padding: 5px 24px 5px 10px; } }
+  @media (max-width: 370px) { .brand .name { display: none; } }
 
   .langbox { position: relative; display: inline-flex; align-items: center; }
   .langbox select { appearance: none; -webkit-appearance: none; font: inherit; font-size: 14px; font-weight: 500; color: var(--ink2); background: transparent; border: 1px solid var(--line); border-radius: 999px; padding: 6px 26px 6px 12px; cursor: pointer; max-width: 160px; }
@@ -128,7 +131,9 @@
     .bento { grid-template-columns: 1fr 1fr; grid-auto-rows: auto; }
     .cell.privacy { grid-column: span 2; }
     .cell.shot { grid-row: auto; grid-column: span 2; }
-    /* The wide cells above fill whole rows, so an odd-numbered last cell has no partner. */
+  }
+  /* Two columns only: the wide cells above fill whole rows, so an odd-numbered last cell has no partner. */
+  @media (min-width: 561px) and (max-width: 860px) {
     .bento > .cell:last-child:nth-child(odd) { grid-column: span 2; }
   }
   @media (max-width: 560px) { .bento { grid-template-columns: 1fr; } .cell.privacy, .cell.shot { grid-column: auto; } }
@@ -210,7 +215,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./"><img class="mark" src="../img/icon.png" width="30" height="30" alt=""> Slovo</a>
+    <a class="brand" href="./"><img class="mark" src="../img/icon.png" width="30" height="30" alt=""> <span class="name">Slovo</span></a>
     <nav aria-label="Site">
       <a class="hide-sm" href="./#features">Funzioni</a>
       <a class="hide-sm" href="./#pricing">Prezzi</a>
