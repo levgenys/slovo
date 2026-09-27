@@ -1009,6 +1009,258 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/support.html"/>
   </url>
   <url>
+    <loc>https://slovo.byles.app/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/ru/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/uk/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/de/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/fr/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/es/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/it/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/pt-BR/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/pl/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/tr/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/nl/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/zh-Hans/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/ja/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
+    <loc>https://slovo.byles.app/ko/faq.html</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://slovo.byles.app/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://slovo.byles.app/ru/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://slovo.byles.app/uk/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://slovo.byles.app/de/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://slovo.byles.app/fr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://slovo.byles.app/es/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://slovo.byles.app/it/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://slovo.byles.app/pt-BR/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://slovo.byles.app/pl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://slovo.byles.app/tr/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://slovo.byles.app/nl/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hans" href="https://slovo.byles.app/zh-Hans/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://slovo.byles.app/ja/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://slovo.byles.app/ko/faq.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://slovo.byles.app/faq.html"/>
+  </url>
+  <url>
     <loc>https://slovo.byles.app/licenses.html</loc>
   </url>
   <url>

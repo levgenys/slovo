@@ -9,6 +9,7 @@ Facts: iOS 18 or later. App Store id 6812518848. The site is available in 14 lan
 ## Pages
 
 - [Home](https://slovo.byles.app/): what Slovo does, how it works, pricing, comparison with cloud transcription services
+- [FAQ](https://slovo.byles.app/faq.html): how to transcribe voice messages, videos and long recordings on iPhone without internet, what stays on the device, what is free
 - [Privacy policy](https://slovo.byles.app/privacy.html): what data the app handles and what it never sends anywhere
 - [Support](https://slovo.byles.app/support.html): how to reach the developer, ideas and bug reports
 - [Terms of use](https://slovo.byles.app/terms.html)
