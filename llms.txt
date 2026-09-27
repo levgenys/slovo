@@ -1,0 +1,36 @@
+# Slovo
+
+> Slovo is a speech-to-text app for iPhone and iPad (runs on Apple silicon Macs too). Recognition happens on the device itself, so audio and text never leave it: no account, no uploads, no internet needed after the model is downloaded.
+
+What it does: records audio or imports audio and video files, and turns speech into text with punctuation and timecodes. Speech recognition uses Whisper and Parakeet models running locally; text polishing uses a small local language model. Free tier with a monthly amount of recognition; Slovo Pro subscription removes the limits and allows files up to 4 hours.
+
+Facts: iOS 18 or later. App Store id 6812518848. The site is available in 14 languages, each page lists its translations via hreflang.
+
+## Pages
+
+- [Home](https://slovo.byles.app/): what Slovo does, how it works, pricing, comparison with cloud transcription services
+- [Privacy policy](https://slovo.byles.app/privacy.html): what data the app handles and what it never sends anywhere
+- [Support](https://slovo.byles.app/support.html): how to reach the developer, ideas and bug reports
+- [Terms of use](https://slovo.byles.app/terms.html)
+- [Open-source licenses](https://slovo.byles.app/licenses.html): the models and libraries the app is built on
+
+## Download
+
+- [Slovo on the App Store](https://apps.apple.com/app/id6812518848)
+
+## Languages
+
+- [English](https://slovo.byles.app/)
+- [Русский](https://slovo.byles.app/ru/)
+- [Українська](https://slovo.byles.app/uk/)
+- [Deutsch](https://slovo.byles.app/de/)
+- [Français](https://slovo.byles.app/fr/)
+- [Español](https://slovo.byles.app/es/)
+- [Italiano](https://slovo.byles.app/it/)
+- [Português](https://slovo.byles.app/pt-BR/)
+- [Polski](https://slovo.byles.app/pl/)
+- [Türkçe](https://slovo.byles.app/tr/)
+- [Nederlands](https://slovo.byles.app/nl/)
+- [简体中文](https://slovo.byles.app/zh-Hans/)
+- [日本語](https://slovo.byles.app/ja/)
+- [한국어](https://slovo.byles.app/ko/)
