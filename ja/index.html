@@ -82,7 +82,7 @@
   .brand:hover { text-decoration: none; }
   /* The app's own tagline next to the name; only where the header has room to spare. */
   .brand .tag { color: var(--ink2); font-weight: 500; font-size: 15px; padding-left: 12px; border-left: 1px solid var(--line); line-height: 1.25; }
-  @media (max-width: 899px) { .brand .tag { display: none; } }
+  @media (max-width: 939px) { .brand .tag { display: none; } }
   .mark { width: 30px; height: 30px; flex: none; }
   nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; font-weight: 500; }
   .top nav { margin-left: auto; }
@@ -91,6 +91,7 @@
   nav .cta { flex: none; color: var(--accent-ink); background: var(--accent); padding: 8px 14px; border-radius: 999px; font-weight: 600; white-space: nowrap; }
   nav .cta:hover { color: var(--accent-ink); filter: brightness(1.08); }
   @media (max-width: 640px) { nav .hide-sm { display: none; } }
+  @media (max-width: 799px) { nav .hide-md { display: none; } }
   /* Safari page zoom narrows the CSS viewport, so these also catch an enlarged font. */
   @media (max-width: 420px) { .top .wrap { gap: 10px; } .langbox select { font-size: 13px; padding: 5px 24px 5px 10px; } }
   @media (max-width: 370px) { .brand .name { display: none; } }
@@ -240,6 +241,7 @@
       <a class="hide-sm" href="./#features">機能</a>
       <a class="hide-sm" href="./#pricing">料金</a>
       <a class="hide-sm" href="support.html">サポート</a>
+      <a class="hide-sm hide-md" href="faq.html">FAQ</a>
       <span class="langbox "><select aria-label="言語" data-lang-select><option value="../">English</option><option value="../ru/">Русский</option><option value="../uk/">Українська</option><option value="../de/">Deutsch</option><option value="../fr/">Français</option><option value="../es/">Español</option><option value="../it/">Italiano</option><option value="../pt-BR/">Português</option><option value="../pl/">Polski</option><option value="../tr/">Türkçe</option><option value="../nl/">Nederlands</option><option value="../zh-Hans/">简体中文</option><option value="../ja/" selected>日本語</option><option value="../ko/">한국어</option></select></span>
       <a class="cta" href="https://apps.apple.com/app/apple-store/id6812518848?pt=127278531&ct=site&mt=8">App Store</a>
     </nav>
