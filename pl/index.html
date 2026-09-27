@@ -78,6 +78,9 @@
   .top .wrap { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; min-height: 64px; padding-block: 10px; gap: 16px; }
   .brand { display: flex; align-items: center; gap: 10px; color: var(--ink); font-weight: 600; font-size: 17px; }
   .brand:hover { text-decoration: none; }
+  /* The app's own tagline next to the name; only where the header has room to spare. */
+  .brand .tag { color: var(--ink2); font-weight: 500; font-size: 15px; padding-left: 12px; border-left: 1px solid var(--line); line-height: 1.25; }
+  @media (max-width: 899px) { .brand .tag { display: none; } }
   .mark { width: 30px; height: 30px; flex: none; }
   nav { display: flex; align-items: center; gap: clamp(14px, 3vw, 28px); font-size: 15px; font-weight: 500; }
   .top nav { margin-left: auto; }
@@ -230,7 +233,7 @@
 <body>
 <header class="top">
   <div class="wrap">
-    <a class="brand" href="./"><img class="mark" src="../img/icon.png" width="30" height="30" alt=""> <span class="name">Slovo</span></a>
+    <a class="brand" href="./"><img class="mark" src="../img/icon.png" width="30" height="30" alt=""> <span class="name">Slovo</span><span class="tag">Mowa na tekst</span></a>
     <nav aria-label="Site">
       <a class="hide-sm" href="./#features">Funkcje</a>
       <a class="hide-sm" href="./#pricing">Cennik</a>
