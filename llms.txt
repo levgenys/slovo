@@ -2,7 +2,7 @@
 
 > Slovo is a speech-to-text app for iPhone and iPad (runs on Apple silicon Macs too). Recognition happens on the device itself, so audio and text never leave it: no account, no uploads, no internet needed after the model is downloaded.
 
-What it does: records audio or imports audio and video files, and turns speech into text with punctuation and timecodes. Speech recognition uses Whisper and Parakeet models running locally; text polishing uses a small local language model. Free tier with a monthly amount of recognition; Slovo Pro subscription removes the limits and allows files up to 4 hours.
+What it does: records audio or imports audio and video files (voice messages from chats, voice memos, videos, through the Share sheet), and turns speech into text with punctuation and timecodes. Text appears while you speak. 99 languages, detected automatically. Free tier with a monthly amount of recognition; Slovo Pro subscription removes the limits and allows recordings and files up to 4 hours.
 
 Facts: iOS 18 or later. App Store id 6812518848. The site is available in 14 languages, each page lists its translations via hreflang.
 
